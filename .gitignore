@@ -1,0 +1,48 @@
+# Node modules
+node_modules/
+.pnp/
+.pnp.js
+
+# pnpm store
+.pnpm-store/
+
+# VitePress build output
+.vitepress/dist
+dist
+out
+
+# Logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor directories
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Tailwind / PostCSS cache (optional)
+.cache/
+
+# Optional: lock file (if you want to manage manually)
+# pnpm-lock.yaml
