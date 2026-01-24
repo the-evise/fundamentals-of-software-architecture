@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
     // Site metadata
+    base: '/fundamentals-of-software-architecture/',
     title: 'Fundamentals of Software Architecture',
     description: 'High-level reference for frontend developers based on Neal Ford’s book, focusing on architecture principles, trade-offs, and decision-making.',
 
