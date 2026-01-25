@@ -28,6 +28,10 @@ export default defineConfig({
                     { text: 'Chapter 12: Pipeline Architecture Style', link: '/chapter-12-pipeline-architecture-style' },
                     { text: 'Chapter 13: Microkernel Architecture Style', link: '/chapter-13-microkernel-architecture-style' },
                     { text: 'Chapter 14: Service-Based Architecture Style', link: '/chapter-14-service-based-architecture-style' },
+                    { text: 'Chapter 15: Event-Driven Architecture Style', link: '/chapter-15-event-driven-architecture-style' },
+                    { text: 'Chapter 16: Space-Based Architecture Style', link: '/chapter-16-space-based-architecture-style' },
+                    { text: 'Chapter 17: Orchestration-Driven Service-Oriented Architecture Style', link: '/chapter-17-orchestration-driven-service-oriented-architecture-style' },
+                    { text: 'Chapter 18: Microservices Architecture', link: '/chapter-18-microservices-architecture' },
                 ]
             },
         ],
@@ -50,6 +54,10 @@ export default defineConfig({
                     { text: 'Chapter 12: Pipeline Architecture Style', link: '/chapter-12-pipeline-architecture-style' },
                     { text: 'Chapter 13: Microkernel Architecture Style', link: '/chapter-13-microkernel-architecture-style' },
                     { text: 'Chapter 14: Service-Based Architecture Style', link: '/chapter-14-service-based-architecture-style' },
+                    { text: 'Chapter 15: Event-Driven Architecture Style', link: '/chapter-15-event-driven-architecture-style' },
+                    { text: 'Chapter 16: Space-Based Architecture Style', link: '/chapter-16-space-based-architecture-style' },
+                    { text: 'Chapter 17: Orchestration-Driven Service-Oriented Architecture Style', link: '/chapter-17-orchestration-driven-service-oriented-architecture-style' },
+                    { text: 'Chapter 18: Microservices Architecture', link: '/chapter-18-microservices-architecture' },
                 ]
             }
         ],
