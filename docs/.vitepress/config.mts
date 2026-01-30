@@ -32,6 +32,12 @@ export default defineConfig({
                     { text: 'Chapter 16: Space-Based Architecture Style', link: '/chapter-16-space-based-architecture-style' },
                     { text: 'Chapter 17: Orchestration-Driven Service-Oriented Architecture Style', link: '/chapter-17-orchestration-driven-service-oriented-architecture-style' },
                     { text: 'Chapter 18: Microservices Architecture', link: '/chapter-18-microservices-architecture' },
+                    { text: 'Chapter 19: Choosing the Appropriate Architecture Style', link: '/chapter-19-choosing-the-appropriate-architecture-style' },
+                    { text: 'Chapter 20: Architectural Patterns', link: '/chapter-20-architectural-patterns' },
+                    { text: 'Chapter 21: Architecture Decisions', link: '/chapter-21-architecture-decisions' },
+                    { text: 'Chapter 22: Analyzing Architecture Risk', link: '/chapter-22-analyzing-architecture-risk' },
+                    { text: 'Chapter 23: Diagramming and Presenting Architecture', link: '/chapter-23-diagramming-presenting-architecture' },
+                    { text: 'Chapter 24: Making Teams Effective', link: '/chapter-24-making-teams-effective' },
                 ]
             },
         ],
@@ -58,6 +64,12 @@ export default defineConfig({
                     { text: 'Chapter 16: Space-Based Architecture Style', link: '/chapter-16-space-based-architecture-style' },
                     { text: 'Chapter 17: Orchestration-Driven Service-Oriented Architecture Style', link: '/chapter-17-orchestration-driven-service-oriented-architecture-style' },
                     { text: 'Chapter 18: Microservices Architecture', link: '/chapter-18-microservices-architecture' },
+                    { text: 'Chapter 19: Choosing the Appropriate Architecture Style', link: '/chapter-19-choosing-the-appropriate-architecture-style' },
+                    { text: 'Chapter 20: Architectural Patterns', link: '/chapter-20-architectural-patterns' },
+                    { text: 'Chapter 21: Architecture Decisions', link: '/chapter-21-architecture-decisions' },
+                    { text: 'Chapter 22: Analyzing Architecture Risk', link: '/chapter-22-analyzing-architecture-risk' },
+                    { text: 'Chapter 23: Diagramming and Presenting Architecture', link: '/chapter-23-diagramming-presenting-architecture' },
+                    { text: 'Chapter 24: Making Teams Effective', link: '/chapter-24-making-teams-effective' },
                 ]
             }
         ],
