@@ -38,6 +38,8 @@ export default defineConfig({
                     { text: 'Chapter 22: Analyzing Architecture Risk', link: '/chapter-22-analyzing-architecture-risk' },
                     { text: 'Chapter 23: Diagramming and Presenting Architecture', link: '/chapter-23-diagramming-presenting-architecture' },
                     { text: 'Chapter 24: Making Teams Effective', link: '/chapter-24-making-teams-effective' },
+                    { text: 'Chapter 25: Negotiation and Leadership Skills', link: '/chapter-25-negotiation-leadership-skills' },
+                    { text: 'Chapter 26: Architectural Intersections', link: '/chapter-26-architectural-intersections' },
                 ]
             },
         ],
@@ -70,6 +72,8 @@ export default defineConfig({
                     { text: 'Chapter 22: Analyzing Architecture Risk', link: '/chapter-22-analyzing-architecture-risk' },
                     { text: 'Chapter 23: Diagramming and Presenting Architecture', link: '/chapter-23-diagramming-presenting-architecture' },
                     { text: 'Chapter 24: Making Teams Effective', link: '/chapter-24-making-teams-effective' },
+                    { text: 'Chapter 25: Negotiation and Leadership Skills', link: '/chapter-25-negotiation-leadership-skills' },
+                    { text: 'Chapter 26: Architectural Intersections', link: '/chapter-26-architectural-intersections' },
                 ]
             }
         ],
