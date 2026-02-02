@@ -40,6 +40,7 @@ export default defineConfig({
                     { text: 'Chapter 24: Making Teams Effective', link: '/chapter-24-making-teams-effective' },
                     { text: 'Chapter 25: Negotiation and Leadership Skills', link: '/chapter-25-negotiation-leadership-skills' },
                     { text: 'Chapter 26: Architectural Intersections', link: '/chapter-26-architectural-intersections' },
+                    { text: 'Chapter 27: The Laws of Software Architecture, Revisited', link: '/chapter-27-the-laws-software-architecture-revisited' },
                 ]
             },
         ],
@@ -74,6 +75,7 @@ export default defineConfig({
                     { text: 'Chapter 24: Making Teams Effective', link: '/chapter-24-making-teams-effective' },
                     { text: 'Chapter 25: Negotiation and Leadership Skills', link: '/chapter-25-negotiation-leadership-skills' },
                     { text: 'Chapter 26: Architectural Intersections', link: '/chapter-26-architectural-intersections' },
+                    { text: 'Chapter 27: The Laws of Software Architecture, Revisited', link: '/chapter-27-the-laws-software-architecture-revisited' },
                 ]
             }
         ],
