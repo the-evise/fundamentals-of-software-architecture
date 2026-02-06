@@ -13,8 +13,7 @@ Component-based thinking is seeing a system as a set of **logical components** i
 
 Each component contains source code that implements a business capability.
 
-**Image placeholder:**
-- `logical-components-overview.png` — major business functions represented as interacting components
+<ImagePlaceholder title="major business functions represented as interacting components" chapter="8"></ImagePlaceholder>
 
 ---
 
@@ -45,8 +44,7 @@ Many architects bypass logical architecture and move directly to physical archit
 
 When those questions remain unanswered, systems often become structurally unplanned—difficult to maintain, test, and deploy.
 
-**Image placeholder:**
-- `logical-vs-physical-architecture.png` — logical component diagram vs physical deployment diagram
+<ImagePlaceholder title="logical component diagram vs physical deployment diagram" chapter="8"></ImagePlaceholder>
 
 ---
 
@@ -58,8 +56,7 @@ Creating a logical architecture is not a one-time design task. It is a continuou
 - evaluating fit against architectural characteristics
 - restructuring when reality conflicts with assumptions
 
-**Image placeholder:**
-- `component-identification-refactoring-cycle.png` — identify → assign → analyze → restructure → repeat
+<ImagePlaceholder title="identify → assign → analyze → restructure → repeat" chapter="8"></ImagePlaceholder>
 
 ---
 
@@ -82,8 +79,7 @@ This approach models major “happy path” workflows (non-error journeys) and d
 
 It tends to emphasize the main request/response processing structure.
 
-**Image placeholder:**
-- `workflow-to-components.png` — user journey steps mapped to components
+<ImagePlaceholder title="user journey steps mapped to components" chapter="8"></ImagePlaceholder>
 
 ### Actor–Action Approach
 Useful when there are multiple actors.
@@ -94,8 +90,7 @@ The architect identifies:
 
 This approach often yields more components than the workflow approach, depending on how many actions and actors are modeled.
 
-**Image placeholder:**
-- `actor-action-component-map.png` — actors/actions mapped to components (use-case style)
+<ImagePlaceholder title="actors/actions mapped to components (use-case style)" chapter="8"></ImagePlaceholder>
 
 ### Other Discovery Techniques (Common Alternatives)
 Different teams use different discovery methods depending on context:
@@ -125,8 +120,7 @@ When components become too coarse-grained:
 - testing becomes difficult
 - deployment risk increases
 
-**Image placeholder:**
-- `entity-trap-antipattern.png` — components with excessive responsibility and unclear boundaries
+<ImagePlaceholder title="components with excessive responsibility and unclear boundaries" chapter="8"></ImagePlaceholder>
 
 A related observation: if a system is purely CRUD against entities, architecture effort may shift toward selecting a suitable framework/tooling rather than designing elaborate component structures.
 
@@ -141,8 +135,7 @@ This step helps expose:
 - overloaded components
 - mismatched boundaries
 
-**Image placeholder:**
-- `user-story-buckets.png` — stories distributed into component “buckets”
+<ImagePlaceholder title="stories distributed into component “buckets”" chapter="8"></ImagePlaceholder>
 
 ---
 
@@ -160,8 +153,7 @@ These patterns tend to correlate with unclear boundaries.
 
 Refactoring responsibility distribution changes the system’s maintainability, testability, and deployability—not because of implementation detail, but because structure determines change cost.
 
-**Image placeholder:**
-- `responsibility-smell-indicators.png` — role statement patterns that imply low cohesion
+<ImagePlaceholder title="role statement patterns that imply low cohesion" chapter="8"></ImagePlaceholder>
 
 ---
 
@@ -196,8 +188,7 @@ Components are coupled when:
 - they communicate with each other
 - or a change in one can impact the correctness of another
 
-**Image placeholder:**
-- `component-coupling-overview.png` — change ripple between components
+<ImagePlaceholder title="change ripple between components" chapter="8"></ImagePlaceholder>
 
 ### Static Coupling (Fan-in / Fan-out)
 Static coupling describes dependency relationships.
@@ -208,8 +199,7 @@ Static coupling describes dependency relationships.
 - **Efferent coupling (fan-out)**  
   Degree to which a target component depends on other components.
 
-**Image placeholders:**
-- `afferent-coupling.png` — many components depend on one
+<ImagePlaceholder title="many components depend on one" chapter="8"></ImagePlaceholder>
 - `efferent-coupling.png` — one component depends on many
 
 *(Terminology note: in some sources, “static coupling” is defined as compile-time dependency. In your notes it appears linked to synchronous interaction; both perspectives converge on the same concern: change propagation.)*
@@ -221,8 +211,7 @@ It is often difficult to detect because:
 - the coupling may not appear in import graphs
 - the failure modes emerge at runtime
 
-**Image placeholder:**
-- `temporal-coupling.png` — timing-dependent interactions between components
+<ImagePlaceholder title="timing-dependent interactions between components" chapter="8"></ImagePlaceholder>
 
 ---
 
@@ -240,24 +229,19 @@ One technique associated with loose coupling is the **Law of Demeter**, also cal
 Applying it often redistributes coupling rather than eliminating it system-wide.
 
 This reflects a recurring theme:
-> Every design has trade-offs; coupling is managed, not removed.
+<QuoteBlock>
+Every design has trade-offs; coupling is managed, not removed.
+</QuoteBlock>
 
-**Image placeholder:**
-- `law-of-demeter.png` — direct knowledge vs “train wreck” calls reduced to a mediator boundary
+<ImagePlaceholder title="direct knowledge vs “train wreck” calls reduced to a mediator boundary" chapter="8"></ImagePlaceholder>
 
 ---
 
 ## Frontend Context: How This Shows Up in React / Next.js
 
-Component-based thinking maps naturally to frontend structures, but the failure modes differ:
-
-- Logical components drift from folder boundaries when imports are unconstrained
-- Shared UI libraries start importing app logic, creating reverse dependencies
-- “Feature” components become system components via convenience shortcuts
-
-A logical architecture diagram that mirrors import boundaries (and is enforced) is often the difference between a maintainable monolith and an accidental one.
-
----
+<FrontendSection
+  lead="Component-based thinking maps naturally to frontend structures, but the failure modes differ:"
+  bullets="[{&quot;icon&quot;: &quot;ChartLine&quot;, &quot;text&quot;: &quot;Logical components drift from folder boundaries when imports are unconstrained&quot;}, {&quot;icon&quot;: &quot;ChartLine&quot;, &quot;text&quot;: &quot;Shared UI libraries start importing app logic, creating reverse dependencies&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;“Feature” components become system components via convenience shortcuts&quot;}, {&quot;icon&quot;: &quot;ChartLine&quot;, &quot;text&quot;: &quot;A logical architecture diagram that mirrors import boundaries (and is enforced) is often the difference between a maintainable monolith and an accidental one.&quot;}]"></FrontendSection>
 
 ## Closing Perspective
 Component-based thinking treats architecture as the structure of responsibilities and interactions—not the deployment topology.

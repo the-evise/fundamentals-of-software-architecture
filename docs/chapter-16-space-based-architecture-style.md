@@ -20,9 +20,7 @@ A common implementation of the virtualized middleware layer is a web server/load
 - Nginx
 - HAProxy
 
-**Image placeholders:**
-- `space-based-topology.png` — virtualized middleware → processing units → async data pumps → DB
-- `virtualized-middleware-routing.png` — load balancer routing requests to processing units
+<ImagePlaceholder title="virtualized middleware → processing units → async data pumps → DB" chapter="16"></ImagePlaceholder>
 
 ---
 
@@ -51,8 +49,7 @@ While implementations vary, the style is often explained using these conceptual 
 - **Deployment manager**  
   Scales processing units up/down based on load.
 
-**Image placeholder:**
-- `space-based-components.png` — labeled diagram: middleware, processing units, data grid, pumps, DB
+<ImagePlaceholder title="labeled diagram: middleware, processing units, data grid, pumps, DB" chapter="16"></ImagePlaceholder>
 
 ---
 
@@ -114,8 +111,7 @@ A data pump sends data to another processor or persistence layer. In space-based
 
 This decouples request throughput from persistence speed, but introduces the operational reality that persistence lags behind runtime state.
 
-**Image placeholder:**
-- `data-pump-async-persistence.png` — in-memory state → persistent queue → DB writer
+<ImagePlaceholder title="in-memory state → persistent queue → DB writer" chapter="16"></ImagePlaceholder>
 
 ---
 
@@ -141,8 +137,7 @@ A common hybrid is:
 - deploy processing units, middleware, and data pumps in cloud
 - keep writer/reader services and DB on-premise (or vice versa)
 
-**Image placeholder:**
-- `space-based-db-topologies.png` — cloud compute + on-prem DB hybrid deployment paths
+<ImagePlaceholder title="cloud compute + on-prem DB hybrid deployment paths" chapter="16"></ImagePlaceholder>
 
 ---
 
@@ -152,8 +147,7 @@ Older descriptions often assume a single orchestration engine. Many modern imple
 - each orchestration unit handles a single major workflow
 - orchestration is parallelized rather than centralized
 
-**Image placeholder:**
-- `orchestration-processing-units.png` — multiple workflow orchestration units rather than one orchestrator
+<ImagePlaceholder title="multiple workflow orchestration units rather than one orchestrator" chapter="16"></ImagePlaceholder>
 
 ---
 
@@ -173,8 +167,7 @@ This reinforces the replicated vs distributed cache trade-off:
 - replicated is fast, but must manage replication lag risk
 - distributed avoids many replication collisions but changes access patterns
 
-**Image placeholder:**
-- `replication-lag-collisions.png` — timeline showing conflicting updates + lag
+<ImagePlaceholder title="timeline showing conflicting updates + lag" chapter="16"></ImagePlaceholder>
 
 ---
 
@@ -190,8 +183,7 @@ A common governance focus is ensuring each processing unit instance periodically
 
 Continuous automated fitness functions can enforce these expectations.
 
-**Image placeholder:**
-- `space-based-observability.png` — processing units emitting telemetry periodically
+<ImagePlaceholder title="processing units emitting telemetry periodically" chapter="16"></ImagePlaceholder>
 
 ---
 
@@ -207,8 +199,7 @@ Its costs include:
 - eventual consistency constraints
 - operational sophistication requirements (telemetry, queueing, cache correctness)
 
-**Image placeholder:**
-- `space-based-characteristics-radar.png` — qualitative ratings across characteristics
+<StyleRatings style-key="Space-based" />
 
 ---
 
@@ -240,15 +231,10 @@ It is less appropriate where:
 
 ## Frontend Context (React / Next.js Lens)
 
-Frontend teams most often encounter space-based systems indirectly:
-- fast response times and immediate “accepted” UX
-- eventual consistency (UI may show intermediate states)
-- data freshness and reconciliation patterns become important
-- “why does the UI show stale data?” becomes a systems question, not a UI bug
-
-This style can produce excellent user-perceived responsiveness, but it requires product-level clarity about consistency semantics.
-
----
+<FrontendSection
+  lead="Frontend teams most often encounter space-based systems indirectly:"
+  bullets="[{&quot;icon&quot;: &quot;Gauge&quot;, &quot;text&quot;: &quot;fast response times and immediate “accepted” UX&quot;}, {&quot;icon&quot;: &quot;Broadcast&quot;, &quot;text&quot;: &quot;eventual consistency (UI may show intermediate states)&quot;}, {&quot;icon&quot;: &quot;Database&quot;, &quot;text&quot;: &quot;data freshness and reconciliation patterns become important&quot;}, {&quot;icon&quot;: &quot;Database&quot;, &quot;text&quot;: &quot;“why does the UI show stale data?” becomes a systems question, not a UI bug&quot;}, {&quot;icon&quot;: &quot;Gauge&quot;, &quot;text&quot;: &quot;This style can produce excellent user-perceived responsiveness, but it requires product-level clarity about consistency semantics.&quot;}]"
+></FrontendSection>
 
 ## Closing Perspective
 Space-based architecture is a complex but powerful answer to a specific class of problems: extreme, variable scale where database contention would otherwise dominate.

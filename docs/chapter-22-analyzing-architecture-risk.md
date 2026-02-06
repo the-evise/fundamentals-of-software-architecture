@@ -21,8 +21,7 @@ A simple way to move from subjective to objective is a scoring matrix:
 
 When likelihood is unknown, treat it as high until proven otherwise.
 
-**Image placeholder:**
-- `risk-matrix-impact-vs-likelihood.png` — 3x3 impact/likelihood matrix with risk levels
+<ImagePlaceholder title="3x3 impact/likelihood matrix with risk levels" chapter="22"></ImagePlaceholder>
 
 ---
 
@@ -41,8 +40,7 @@ Interpretation:
 
 This does not make risk “true,” but it makes risk comparable across concerns.
 
-**Image placeholder:**
-- `risk-score-formula.png` — impact(1–3) × likelihood(1–3) with thresholds
+<ImagePlaceholder title="impact(1–3) × likelihood(1–3) with thresholds" chapter="22"></ImagePlaceholder>
 
 ---
 
@@ -60,8 +58,7 @@ This creates alignment:
 - why they matter
 - where mitigation investment is justified
 
-**Image placeholder:**
-- `risk-criteria-table.png` — rows: characteristics/domain concerns; columns: impact/likelihood/score/notes
+<ImagePlaceholder title="rows: characteristics/domain concerns; columns: impact/likelihood/score/notes" chapter="22"></ImagePlaceholder>
 
 ---
 
@@ -78,8 +75,7 @@ Example framing:
 
 This avoids a vague “the system is risky” conclusion and replaces it with actionable targeting.
 
-**Image placeholder:**
-- `risk-per-quantum.png` — quanta mapped to characteristic risks
+<ImagePlaceholder title="quanta mapped to characteristic risks" chapter="22"></ImagePlaceholder>
 
 ---
 
@@ -130,8 +126,7 @@ Mitigation often becomes negotiation:
 
 Risk storming supports that negotiation by making the decision surface explicit.
 
-**Image placeholder:**
-- `risk-storming-phases.png` — identification → consensus → mitigation loop
+<ImagePlaceholder title="identification → consensus → mitigation loop" chapter="22"></ImagePlaceholder>
 
 ---
 
@@ -156,8 +151,7 @@ The same matrix can be applied to user stories inside iterations:
 
 This extends risk storming from architecture shape to delivery reality.
 
-**Image placeholder:**
-- `story-risk-matrix.png` — impact vs likelihood for iteration completion
+<ImagePlaceholder title="impact vs likelihood for iteration completion" chapter="22"></ImagePlaceholder>
 
 ---
 
@@ -177,24 +171,10 @@ This is not a rejection of innovation; it is a recognition that novelty requires
 
 ## Frontend Context (React / Next.js Lens)
 
-Frontend architecture risk often clusters around:
-- **performance vs responsiveness** (perceived UX vs end-to-end latency)
-- **deployability** (release frequency, rollback safety)
-- **contract volatility** (API changes, schema drift)
-- **observability gaps** (client-side error tracking, tracing correlation)
-- **coupling** (shared UI libraries becoming domain logic hubs)
-
-Risk storming is useful here because frontend risks are frequently cross-cutting:
-- a “backend” decision changes UI latency profiles
-- a “frontend” caching decision changes data integrity perception
-- a deployment constraint affects both
-
-Scoping risks by characteristic and by quantum keeps the discussion grounded:
-- “availability risk in the public web UI”
-- “performance risk in SSR rendering”
-- “contract risk in checkout orchestration”
-
----
+<FrontendSection
+  lead="Frontend architecture risk often clusters around:"
+  bullets="[{&quot;icon&quot;: &quot;Gauge&quot;, &quot;text&quot;: &quot;**performance vs responsiveness** (perceived UX vs end-to-end latency)&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;**deployability** (release frequency, rollback safety)&quot;}, {&quot;icon&quot;: &quot;BracketsCurly&quot;, &quot;text&quot;: &quot;**contract volatility** (API changes, schema drift)&quot;}, {&quot;icon&quot;: &quot;ChartLine&quot;, &quot;text&quot;: &quot;**observability gaps** (client-side error tracking, tracing correlation)&quot;}, {&quot;icon&quot;: &quot;ChartLine&quot;, &quot;text&quot;: &quot;**coupling** (shared UI libraries becoming domain logic hubs)&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;Risk storming is useful here because frontend risks are frequently cross-cutting:&quot;}, {&quot;icon&quot;: &quot;Gauge&quot;, &quot;text&quot;: &quot;a “backend” decision changes UI latency profiles&quot;}, {&quot;icon&quot;: &quot;Database&quot;, &quot;text&quot;: &quot;a “frontend” caching decision changes data integrity perception&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;a deployment constraint affects both&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;Scoping risks by characteristic and by quantum keeps the discussion grounded:&quot;}, {&quot;icon&quot;: &quot;ShieldCheck&quot;, &quot;text&quot;: &quot;“availability risk in the public web UI”&quot;}, {&quot;icon&quot;: &quot;Gauge&quot;, &quot;text&quot;: &quot;“performance risk in SSR rendering”&quot;}, {&quot;icon&quot;: &quot;BracketsCurly&quot;, &quot;text&quot;: &quot;“contract risk in checkout orchestration”&quot;}]"
+></FrontendSection>
 
 ## Closing Perspective
 Architectural risk analysis turns “unease” into a decision-ready artifact:

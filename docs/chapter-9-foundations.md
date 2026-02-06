@@ -28,8 +28,7 @@ An architecture style describes several characteristics of an architecture, incl
 
 In practice, these dimensions tend to travel together: changing one often forces changes in others.
 
-**Image placeholder:**
-- `architecture-style-dimensions.png` — the five style dimensions mapped around a system diagram
+<ImagePlaceholder title="the five style dimensions mapped around a system diagram" chapter="9"></ImagePlaceholder>
 
 ---
 
@@ -42,8 +41,7 @@ A useful distinction:
 - Patterns are often applied as localized solutions.
 - Styles tend to shape the system’s overall structure.
 
-**Image placeholder:**
-- `pattern-vs-style.png` — localized pattern vs system-level style influence
+<ImagePlaceholder title="localized pattern vs system-level style influence" chapter="9"></ImagePlaceholder>
 
 ---
 
@@ -59,8 +57,7 @@ A modern frontend version can look like:
 
 This architecture can ship quickly early on, then accumulates friction as complexity grows.
 
-**Image placeholder:**
-- `big-ball-of-mud-frontend.png` — UI handlers → data calls → mixed responsibilities (tangled arrows)
+<ImagePlaceholder title="UI handlers → data calls → mixed responsibilities (tangled arrows)" chapter="9"></ImagePlaceholder>
 
 ---
 
@@ -88,8 +85,7 @@ In architecture, this implies:
 
 This becomes especially visible in large frontend systems where platform teams, design systems, and product teams all co-evolve with code boundaries.
 
-**Image placeholder:**
-- `conways-law-mapping.png` — org chart mapped to component boundaries
+<ImagePlaceholder title="org chart mapped to component boundaries" chapter="9"></ImagePlaceholder>
 
 ---
 
@@ -107,8 +103,7 @@ Two broad partitioning modes are frequently contrasted:
 
 Even for frontend developers, recognizing these shapes helps when collaborating across teams and services, because each style has different failure modes and trade-off profiles.
 
-**Image placeholder:**
-- `technical-vs-domain-partitioning.png` — layered partitions vs domain/workflow partitions
+<ImagePlaceholder title="layered partitions vs domain/workflow partitions" chapter="9"></ImagePlaceholder>
 
 ---
 
@@ -147,31 +142,18 @@ Modern practice often adds additional “operational fallacies” commonly encou
 
 These assumptions tend to hold in monoliths because calls are local and controlled. In distributed systems they become failure multipliers.
 
-**Image placeholder:**
-- `distributed-fallacies.png` — fallacies mapped to real-world failure modes (timeouts, retries, version skew)
+<ImagePlaceholder title="fallacies mapped to real-world failure modes (timeouts, retries, version skew)" chapter="9"></ImagePlaceholder>
 
 ---
 
 ## Frontend Lens on Distributed Fallacies
 
-Frontend systems experience distributed fallacies indirectly through APIs and dependencies.
-
-A practical example: **stamp coupling** (bandwidth assumption)
-- A REST endpoint returns more data than the client needs “just in case”
-- Over time, payload size grows
-- Mobile performance degrades, cache churn increases, and latency becomes visible
-
-Common mitigation patterns include:
-- More specific endpoints
-- Field selectors in contracts
-- GraphQL or query-based selection
-
-This is less about technology preference and more about making coupling explicit and limiting unnecessary transfer.
-
-**Image placeholder:**
-- `stamp-coupling.png` — oversized payload vs targeted payload vs field selection
-
----
+<FrontendSection
+  lead="Frontend systems experience distributed fallacies indirectly through APIs and dependencies. A practical example: **stamp coupling** (bandwidth assumption)"
+  bullets="[{&quot;icon&quot;: &quot;BracketsCurly&quot;, &quot;text&quot;: &quot;A REST endpoint returns more data than the client needs “just in case”&quot;}, {&quot;icon&quot;: &quot;Database&quot;, &quot;text&quot;: &quot;Over time, payload size grows&quot;}, {&quot;icon&quot;: &quot;Gauge&quot;, &quot;text&quot;: &quot;Mobile performance degrades, cache churn increases, and latency becomes visible&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;Common mitigation patterns include:&quot;}, {&quot;icon&quot;: &quot;Flask&quot;, &quot;text&quot;: &quot;More specific endpoints&quot;}, {&quot;icon&quot;: &quot;BracketsCurly&quot;, &quot;text&quot;: &quot;Field selectors in contracts&quot;}, {&quot;icon&quot;: &quot;BracketsCurly&quot;, &quot;text&quot;: &quot;GraphQL or query-based selection&quot;}, {&quot;icon&quot;: &quot;ChartLine&quot;, &quot;text&quot;: &quot;This is less about technology preference and more about making coupling explicit and limiting unnecessary transfer.&quot;}]"
+  imageTitle="oversized payload vs targeted payload vs field selection"
+  imageChapter="9"
+></FrontendSection>
 
 ## Team Topologies and Architecture
 
@@ -191,8 +173,7 @@ Modern organizations often describe team types that influence architectural shap
 
 These team structures often map to architectural boundaries, creating either clarity (aligned boundaries) or friction (misaligned dependencies).
 
-**Image placeholder:**
-- `team-topologies-to-architecture.png` — team types mapped to system boundaries
+<ImagePlaceholder title="team types mapped to system boundaries" chapter="9"></ImagePlaceholder>
 
 ---
 

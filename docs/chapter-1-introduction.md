@@ -15,20 +15,20 @@ Architecture is the sum of three interrelated aspects:
 - Defines the **architecture style** of the system.
 - Examples: layered architecture, micro-frontends, component-based architecture.
 - *Contextual note:* In React/Next.js, component composition, state management boundaries, and routing conventions form the structural backbone.
-- *Image placeholder:* `architecture-structure-diagram.png` – diagram showing high-level frontend structure.
+<ImagePlaceholder title="diagram showing high-level frontend structure." chapter="1"></ImagePlaceholder>
 
 ### 2. Architecture Characteristics (-ilities)
 - Define the **success criteria** of a system.
 - Examples: maintainability, scalability, reliability, performance, security.
 - *Contextual perspective:* A React project might favor maintainability (readable, reusable components) over initial performance if team velocity is prioritized.
 - *Alternative views:* Some architects may prioritize performance over maintainability in high-traffic apps.
-- *Image placeholder:* `architecture-characteristics.png` – visual mapping of ilities vs trade-offs.
+<ImagePlaceholder title="visual mapping of ilities vs trade-offs." chapter="1"></ImagePlaceholder>
 
 ### 3. Architecture Decisions
 - Rules for how the system should be constructed.
 - Decisions are **guidelines**, not strict rules; variances can be approved through reviews.
 - *Example in frontend:* Choosing Redux vs Zustand, server-side rendering vs client-only rendering, or Next.js routing strategy.
-- *Image placeholder:* `architecture-decisions-flow.png` – flow showing decision process and review points.
+<ImagePlaceholder title="flow showing decision process and review points." chapter="1"></ImagePlaceholder>
 
 ---
 
@@ -41,19 +41,61 @@ Architecture is the sum of three interrelated aspects:
 
 ## Core Responsibilities of a Software Architect
 
-| Responsibility | High-Level Perspective | Frontend Example / Context |
-|----------------|---------------------|---------------------------|
-| **Make architecture decisions** | Guide overall direction rather than dictating tech | Selecting component patterns, state management, API structure |
-| **Continually analyze architecture** | Assess viability, especially after 3+ years | Audit component hierarchy, identify bottlenecks, or code duplication |
-| **Stay current with trends** | Ensure relevance of decisions in the future | Evaluate React features (Concurrent Mode, Server Components), new tools (Vite, Tailwind updates) |
-| **Ensure compliance with decisions** | Verify and communicate adherence | Code reviews for architecture consistency, linting, documentation |
-| **Diverse tech knowledge** | Breadth over depth | Explore CSS frameworks, backend interactions (GraphQL/REST), deployment platforms |
-| **Business domain understanding** | Decisions align with requirements | Adjust UI/UX for business priorities; consider performance vs rapid iteration |
-| **Interpersonal and leadership skills** | Half of the architect's work | Mentor team, resolve conflicts, guide design discussions |
-| **Navigate organizational politics** | Challenge and defend decisions | Negotiate trade-offs with product owners, stakeholders |
+<TableBlock>
+<table>
+  <thead>
+    <tr>
+      <th>Responsibility</th>
+      <th>High-Level Perspective</th>
+      <th>Frontend Example / Context</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Make architecture decisions</strong></td>
+      <td>Guide overall direction rather than dictating tech</td>
+      <td>Selecting component patterns, state management, API structure</td>
+    </tr>
+    <tr>
+      <td><strong>Continually analyze architecture</strong></td>
+      <td>Assess viability, especially after 3+ years</td>
+      <td>Audit component hierarchy, identify bottlenecks, or code duplication</td>
+    </tr>
+    <tr>
+      <td><strong>Stay current with trends</strong></td>
+      <td>Ensure relevance of decisions in the future</td>
+      <td>Evaluate React features (Concurrent Mode, Server Components), new tools (Vite, Tailwind updates)</td>
+    </tr>
+    <tr>
+      <td><strong>Ensure compliance with decisions</strong></td>
+      <td>Verify and communicate adherence</td>
+      <td>Code reviews for architecture consistency, linting, documentation</td>
+    </tr>
+    <tr>
+      <td><strong>Diverse tech knowledge</strong></td>
+      <td>Breadth over depth</td>
+      <td>Explore CSS frameworks, backend interactions (GraphQL/REST), deployment platforms</td>
+    </tr>
+    <tr>
+      <td><strong>Business domain understanding</strong></td>
+      <td>Decisions align with requirements</td>
+      <td>Adjust UI/UX for business priorities; consider performance vs rapid iteration</td>
+    </tr>
+    <tr>
+      <td><strong>Interpersonal and leadership skills</strong></td>
+      <td>Half of the architect's work</td>
+      <td>Mentor team, resolve conflicts, guide design discussions</td>
+    </tr>
+    <tr>
+      <td><strong>Navigate organizational politics</strong></td>
+      <td>Challenge and defend decisions</td>
+      <td>Negotiate trade-offs with product owners, stakeholders</td>
+    </tr>
+  </tbody>
+</table>
+</TableBlock>
 
-*Image placeholder:* `core-expectations.png` – visual showing these 8 core responsibilities.
-
+<ImagePlaceholder title="visual showing these 8 core responsibilities" chapter="1"></ImagePlaceholder>
 ---
 
 ## Contextual Notes for Frontend Development

@@ -46,3 +46,6 @@ Thumbs.db
 
 # Optional: lock file (if you want to manage manually)
 # pnpm-lock.yaml
+
+# Agent docs
+AGENTS.md

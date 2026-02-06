@@ -27,8 +27,7 @@ This results in a deliberate preference:
 
 The rationale: reuse typically requires coupling (inheritance, shared libraries, shared contracts). If the primary goal is decoupling, duplication becomes an acceptable trade.
 
-**Image placeholder:**
-- `microservices-topology.png` — many small services each with its own data store, communicating over the network
+<ImagePlaceholder title="many small services each with its own data store, communicating over the network" chapter="18"></ImagePlaceholder>
 
 ---
 
@@ -38,7 +37,9 @@ Microservices are smaller than services in other distributed styles, and include
 
 But “micro” is a label, not a measurement target.
 
-> “The term microservice is a label, not a description.” — Martin Fowler
+<QuoteBlock cite="Martin Fowler">
+“The term microservice is a label, not a description.”
+</QuoteBlock>
 
 If teams take “micro” literally and over-shrink boundaries, they risk producing the distributed equivalent of big ball of mud:
 - too many tiny services
@@ -49,8 +50,7 @@ If teams take “micro” literally and over-shrink boundaries, they risk produc
 
 Your notes call this the **Grains of Sand** failure mode (services too fine-grained).
 
-**Image placeholder:**
-- `grains-of-sand-antipattern.png` — too many tiny services creating a dense call graph
+<ImagePlaceholder title="too many tiny services creating a dense call graph" chapter="18"></ImagePlaceholder>
 
 ---
 
@@ -77,8 +77,7 @@ This is not “anti-microservices”; it is boundary refinement based on observe
 
 Iteration is the mechanism that makes this work: architects refine boundaries as they learn more about domain behavior.
 
-**Image placeholder:**
-- `microservice-boundary-lenses.png` — purpose / transactions / coordination as evaluation lenses
+<ImagePlaceholder title="purpose / transactions / coordination as evaluation lenses" chapter="18"></ImagePlaceholder>
 
 ---
 
@@ -98,8 +97,7 @@ The trade:
 - integration becomes harder
 - replication/caching strategies become more important
 
-**Image placeholder:**
-- `bounded-context-data-isolation.png` — separate datastores per bounded context, no shared DB
+<ImagePlaceholder title="separate datastores per bounded context, no shared DB" chapter="18"></ImagePlaceholder>
 
 ---
 
@@ -115,8 +113,7 @@ Pushing orchestration or business logic into a centralized mediator (or a generi
 This is one reason API layers should be watched carefully:
 - they can become business logic hubs if teams are not deliberate
 
-**Image placeholder:**
-- `api-layer-business-logic-smell.png` — API layer accumulating domain rules outside services
+<ImagePlaceholder title="API layer accumulating domain rules outside services" chapter="18"></ImagePlaceholder>
 
 ---
 
@@ -130,8 +127,7 @@ In many microservices ecosystems, discovery is treated as part of the “mesh”
 
 (Your notes mention sidecar pattern and service mesh as common supporting mechanisms.)
 
-**Image placeholder:**
-- `service-mesh-sidecar.png` — services with sidecars + mesh control plane
+<ImagePlaceholder title="services with sidecars + mesh control plane" chapter="18"></ImagePlaceholder>
 
 ---
 
@@ -151,8 +147,7 @@ One extreme governance anecdote illustrates the anti-coupling goal:
 - force different stacks per team to prevent accidental class sharing
   This is the opposite of enterprise standardization policies, and highlights the trade-off: autonomy vs uniformity.
 
-**Image placeholder:**
-- `sync-vs-async-microservices.png` — sync call chains vs async event flows across services
+<ImagePlaceholder title="sync call chains vs async event flows across services" chapter="18"></ImagePlaceholder>
 
 ---
 
@@ -168,9 +163,7 @@ UI is decomposed into independently owned components, mirroring backend service 
 This creates a symmetry of granularity and isolation:
 - UI components align with corresponding backend services
 
-**Image placeholders:**
-- `microservices-ui-single-ui.png` — one UI → API layer → services
-- `micro-frontends-topology.png` — multiple UI slices aligned to backend services
+<ImagePlaceholder title="one UI → API layer → services" chapter="18"></ImagePlaceholder>
 
 ---
 
@@ -188,8 +181,7 @@ However, coordination sometimes becomes necessary. A localized mediator (often c
 
 This becomes an explicit representation of coupling rather than hidden coupling scattered everywhere.
 
-**Image placeholder:**
-- `choreography-vs-local-mediator.png` — decentralized event flow vs orchestration service boundary
+<ImagePlaceholder title="decentralized event flow vs orchestration service boundary" chapter="18"></ImagePlaceholder>
 
 ---
 
@@ -208,8 +200,7 @@ When cross-service transactions are needed, the common pattern is **Saga**:
 
 If sagas become the dominant mechanism, it may indicate microservices is a poor fit for the problem domain’s consistency requirements.
 
-**Image placeholder:**
-- `saga-pattern.png` — orchestrator coordinating steps + compensations
+<ImagePlaceholder title="orchestrator coordinating steps + compensations" chapter="18"></ImagePlaceholder>
 
 ---
 
@@ -231,8 +222,7 @@ Gathering proper metrics often requires:
 - tracking sync call volume and critical paths
 - observing unintended entanglement
 
-**Image placeholder:**
-- `microservices-governance-metrics.png` — tracing call graph + dependency health checks
+<ImagePlaceholder title="tracing call graph + dependency health checks" chapter="18"></ImagePlaceholder>
 
 ---
 
@@ -250,8 +240,7 @@ At the cost of:
 - harder consistency and transactions
 - increased duplication
 
-**Image placeholder:**
-- `microservices-characteristics-radar.png` — qualitative ratings across characteristics
+<StyleRatings style-key="Microservices" />
 
 ---
 
@@ -273,16 +262,10 @@ It tends to strain when:
 
 ## Frontend Context (React / Next.js Lens)
 
-Microservices affects frontend architecture through:
-- API volatility and versioning pressure
-- eventual consistency that shows up as intermediate UI states
-- latency variability across multi-service aggregation
-- the appeal of BFF/API gateway response shaping
-- micro-frontends when UI ownership needs to mirror backend autonomy
-
-A practical risk is “business logic leakage” into the API layer or UI due to orchestration pressure. The bounded context philosophy resists that by pushing domain logic back into the owning service boundary.
-
----
+<FrontendSection
+  lead="Microservices affects frontend architecture through:"
+  bullets="[{&quot;icon&quot;: &quot;BracketsCurly&quot;, &quot;text&quot;: &quot;API volatility and versioning pressure&quot;}, {&quot;icon&quot;: &quot;Broadcast&quot;, &quot;text&quot;: &quot;eventual consistency that shows up as intermediate UI states&quot;}, {&quot;icon&quot;: &quot;Gauge&quot;, &quot;text&quot;: &quot;latency variability across multi-service aggregation&quot;}, {&quot;icon&quot;: &quot;BracketsCurly&quot;, &quot;text&quot;: &quot;the appeal of BFF/API gateway response shaping&quot;}, {&quot;icon&quot;: &quot;UsersThree&quot;, &quot;text&quot;: &quot;micro-frontends when UI ownership needs to mirror backend autonomy&quot;}, {&quot;icon&quot;: &quot;BracketsCurly&quot;, &quot;text&quot;: &quot;A practical risk is “business logic leakage” into the API layer or UI due to orchestration pressure. The bounded context philosophy resists that by pushing domain logic back into the owning service boundary.&quot;}]"
+></FrontendSection>
 
 ## Closing Perspective
 Microservices is popular because it offers a path toward high decoupling and independent delivery. It achieves that by accepting the costs of distribution and by treating coupling—especially through shared data and schemas—as the primary enemy.

@@ -33,8 +33,7 @@ Its layered taxonomy typically supports:
 
 The architecture is technically partitioned in a very strong way—arguably more than most general-purpose styles.
 
-**Image placeholder:**
-- `soa-layered-taxonomy.png` — layers of service taxonomy (infrastructure → app → enterprise → business)
+<ImagePlaceholder title="layers of service taxonomy (infrastructure → app → enterprise → business)" chapter="17"></ImagePlaceholder>
 
 ---
 
@@ -56,8 +55,7 @@ A common orchestration-driven SOA taxonomy includes layers such as:
 
 Each layer aims for flexibility of implementation behind stable abstractions.
 
-**Image placeholder:**
-- `soa-abstraction-flexibility.png` — stable contracts with interchangeable implementations beneath
+<ImagePlaceholder title="stable contracts with interchangeable implementations beneath" chapter="17"></ImagePlaceholder>
 
 ---
 
@@ -81,8 +79,7 @@ In practice, it often becomes:
 
 This is one reason SOA is frequently described as a distributed monolith: many changes require coordination through shared orchestration and shared enterprise services.
 
-**Image placeholder:**
-- `esb-central-orchestration.png` — services integrated through a central ESB
+<ImagePlaceholder title="services integrated through a central ESB" chapter="17"></ImagePlaceholder>
 
 ---
 
@@ -104,8 +101,7 @@ This experience is one reason modern domain modeling approaches (such as DDD) te
 - edge cases accumulate
 - “one service for all contexts” becomes fragile
 
-**Image placeholder:**
-- `reuse-implies-coupling.png` — reuse layer creating cross-domain dependency mesh
+<ImagePlaceholder title="reuse layer creating cross-domain dependency mesh" chapter="17"></ImagePlaceholder>
 
 ---
 
@@ -124,8 +120,7 @@ The style’s success relies heavily on:
 - strict control of orchestration scope
 - careful treatment of transaction boundaries
 
-**Image placeholder:**
-- `soa-transaction-boundaries.png` — orchestration crossing boundaries causing distributed transaction complexity
+<ImagePlaceholder title="orchestration crossing boundaries causing distributed transaction complexity" chapter="17"></ImagePlaceholder>
 
 ---
 
@@ -144,8 +139,7 @@ Orchestration-driven SOA tends to score poorly on these goals because:
 
 These are not accidental shortcomings; they reflect the era’s priorities when SOA emerged.
 
-**Image placeholder:**
-- `soa-characteristics-radar.png` — qualitative ratings (low deployability/testability, high reuse/abstraction)
+<StyleRatings style-key="SOA" />
 
 ---
 
@@ -165,20 +159,10 @@ A useful lens:
 
 ## Frontend Context (React / Next.js Lens)
 
-Frontend teams usually encounter orchestration-driven SOA indirectly through:
-- ESB-shaped APIs with heavy transformation logic
-- centralized gateways that enforce enterprise contracts
-- slow-moving shared services with high coordination overhead
-- integration delays driven by shared change control
-
-From the frontend perspective, the practical symptoms often look like:
-- difficult-to-change contracts
-- long release cycles for “small” API changes
-- high dependency on central teams
-
-This can constrain UX experimentation and iterative delivery even when the UI stack itself is modern.
-
----
+<FrontendSection
+  lead="Frontend teams usually encounter orchestration-driven SOA indirectly through:"
+  bullets="[{&quot;icon&quot;: &quot;BracketsCurly&quot;, &quot;text&quot;: &quot;ESB-shaped APIs with heavy transformation logic&quot;}, {&quot;icon&quot;: &quot;BracketsCurly&quot;, &quot;text&quot;: &quot;centralized gateways that enforce enterprise contracts&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;slow-moving shared services with high coordination overhead&quot;}, {&quot;icon&quot;: &quot;Timer&quot;, &quot;text&quot;: &quot;integration delays driven by shared change control&quot;}, {&quot;icon&quot;: &quot;Flask&quot;, &quot;text&quot;: &quot;From the frontend perspective, the practical symptoms often look like:&quot;}, {&quot;icon&quot;: &quot;BracketsCurly&quot;, &quot;text&quot;: &quot;difficult-to-change contracts&quot;}, {&quot;icon&quot;: &quot;ArrowsClockwise&quot;, &quot;text&quot;: &quot;long release cycles for “small” API changes&quot;}, {&quot;icon&quot;: &quot;UsersThree&quot;, &quot;text&quot;: &quot;high dependency on central teams&quot;}, {&quot;icon&quot;: &quot;Gauge&quot;, &quot;text&quot;: &quot;This can constrain UX experimentation and iterative delivery even when the UI stack itself is modern.&quot;}]"
+></FrontendSection>
 
 ## Closing Perspective
 Orchestration-driven SOA represents perhaps the most technically partitioned reuse-oriented general-purpose architecture attempted at enterprise scale.

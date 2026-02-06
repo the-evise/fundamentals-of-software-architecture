@@ -34,8 +34,7 @@ A recurring failure mode in architecture communication:
 - viewers lose track of what is connected to what
 - misunderstandings emerge that look like “disagreement”
 
-**Image placeholder:**
-- `representational-consistency-before-after.png` — same relationships shown, then zoomed/filtered view
+<ImagePlaceholder title="same relationships shown, then zoomed/filtered view" chapter="23"></ImagePlaceholder>
 
 ---
 
@@ -50,8 +49,7 @@ A practical goal in each diagram:
 This removes a common source of confusion:
 - someone assumes a “logical component diagram” is a “deployment diagram,” or vice versa
 
-**Image placeholder:**
-- `scope-labeling-example.png` — “Scope: Domain service boundary” / “Scope: system-level topology”
+<ImagePlaceholder title="“Scope: Domain service boundary” / “Scope: system-level topology”" chapter="23"></ImagePlaceholder>
 
 ---
 
@@ -75,8 +73,7 @@ Lightweight tooling supports this by making it easy to:
 
 A diagram should be disposable enough that it can evolve.
 
-**Image placeholder:**
-- `diagram-iteration-cycle.png` — sketch → discuss → revise → discard/replace
+<ImagePlaceholder title="sketch → discuss → revise → discard/replace" chapter="23"></ImagePlaceholder>
 
 ---
 
@@ -115,8 +112,7 @@ A consistent personal style reduces cognitive load for the viewer. A practical s
 
 A style is not an aesthetic choice; it is an encoding system.
 
-**Image placeholder:**
-- `diagram-style-kit.png` — legend: shapes, line types, colors
+<ImagePlaceholder title="legend: shapes, line types, colors" chapter="23"></ImagePlaceholder>
 
 ---
 
@@ -133,8 +129,7 @@ This makes coupling visible at a glance:
 
 Keeping this consistent across diagrams helps audiences reason about trade-offs without reading paragraphs of explanation.
 
-**Image placeholder:**
-- `sync-async-line-legend.png` — solid vs dotted with examples
+<ImagePlaceholder title="solid vs dotted with examples" chapter="23"></ImagePlaceholder>
 
 ---
 
@@ -149,38 +144,18 @@ This keeps audiences oriented:
 - “this component interacts with those three others”
 - “this view is a projection of the same structure”
 
-**Image placeholder:**
-- `presentation-zoom-sequence.png` — system topology → domain boundary → component detail
+<ImagePlaceholder title="system topology → domain boundary → component detail" chapter="23"></ImagePlaceholder>
 
 ---
 
 ## Frontend Context (React / Next.js Lens)
 
-In frontend-heavy systems, diagrams often work best when they separate views:
-
-- **Logical architecture**
-    - feature modules / bounded contexts
-    - UI composition (pages, feature slices, microfrontends)
-    - API contracts by domain
-
-- **Physical architecture**
-    - Next.js runtime (SSR/ISR/CSR paths)
-    - CDN/edge caching layers
-    - BFF/gateway placement
-
-- **Communication**
-    - sync: UI → BFF → service
-    - async: UI triggers action; UI updates via polling/events/webhooks
-
-Using consistent line semantics and explicit scope prevents common confusion:
-- “Is this diagram showing UI routing or deployment routing?”
-- “Is that a module boundary or a service boundary?”
-
-**Image placeholders:**
-- `frontend-logical-vs-physical.png` — logical modules vs physical deployment
-- `ui-bff-service-communication.png` — sync + async flows clearly marked
-
----
+<FrontendSection
+  lead="In frontend-heavy systems, diagrams often work best when they separate views:"
+  bullets="[{&quot;icon&quot;: &quot;ChartLine&quot;, &quot;text&quot;: &quot;**Logical architecture**&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;feature modules / bounded contexts&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;UI composition (pages, feature slices, microfrontends)&quot;}, {&quot;icon&quot;: &quot;BracketsCurly&quot;, &quot;text&quot;: &quot;API contracts by domain&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;**Physical architecture**&quot;}, {&quot;icon&quot;: &quot;Timer&quot;, &quot;text&quot;: &quot;Next.js runtime (SSR/ISR/CSR paths)&quot;}, {&quot;icon&quot;: &quot;Cloud&quot;, &quot;text&quot;: &quot;CDN/edge caching layers&quot;}, {&quot;icon&quot;: &quot;FlowArrow&quot;, &quot;text&quot;: &quot;BFF/gateway placement&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;**Communication**&quot;}, {&quot;icon&quot;: &quot;FlowArrow&quot;, &quot;text&quot;: &quot;sync: UI → BFF → service&quot;}, {&quot;icon&quot;: &quot;Broadcast&quot;, &quot;text&quot;: &quot;async: UI triggers action; UI updates via polling/events/webhooks&quot;}, {&quot;icon&quot;: &quot;Broadcast&quot;, &quot;text&quot;: &quot;Using consistent line semantics and explicit scope prevents common confusion:&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;“Is this diagram showing UI routing or deployment routing?”&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;“Is that a module boundary or a service boundary?”&quot;}]"
+  imageTitle="logical modules vs physical deployment"
+  imageChapter="23"
+></FrontendSection>
 
 ## Closing Perspective
 Architecture diagrams are communication artifacts, not monuments. Their value comes from:

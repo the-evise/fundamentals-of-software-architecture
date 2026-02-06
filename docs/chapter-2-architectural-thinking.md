@@ -32,10 +32,11 @@ Examples include choosing Next.js over a client-only React setup, deciding on se
 *Frontend context:*  
 Examples include component layout decisions, Tailwind utility composition, local animation choices, or minor hook abstractions.
 
-> Architectural thinking emerges not from choosing one side, but from recognizing **where a decision sits on this spectrum**.
+<QuoteBlock>
+Architectural thinking emerges not from choosing one side, but from recognizing **where a decision sits on this spectrum**.
+</QuoteBlock>
 
-**Image placeholder:**
-- `architecture-vs-design-spectrum.png` – visual continuum from tactical design to strategic architecture
+<ImagePlaceholder title="visual continuum from tactical design to strategic architecture" chapter="2"></ImagePlaceholder>
 
 ---
 
@@ -63,8 +64,7 @@ In frontend architecture, this may include surface-level understanding of:
 - Performance characteristics
 - Accessibility constraints
 
-**Image placeholder:**
-- `architect-knowledge-pyramid.png` – pyramid showing knowns, known unknowns, unknown unknowns
+<ImagePlaceholder title="pyramid showing knowns, known unknowns, unknown unknowns" chapter="2"></ImagePlaceholder>
 
 ---
 
@@ -89,13 +89,15 @@ This mindset shift is less about certainty and more about **asking better questi
 
 There are no universally correct answers in architecture—only trade-offs.
 
-> “There are no right or wrong answers in architecture, only trade-offs.”  
-> — Mark Richards
+<QuoteBlock cite="Mark Richards">
+“There are no right or wrong answers in architecture, only trade-offs.”
+</QuoteBlock>
 
 Programmers often optimize for benefits in isolation. Architects must understand **both benefits and costs**.
 
-> “Programmers know the benefits of everything and the trade-offs of nothing.”  
-> — Rich Hickey
+<QuoteBlock cite="Rich Hickey">
+“Programmers know the benefits of everything and the trade-offs of nothing.”
+</QuoteBlock>
 
 In frontend systems, trade-offs frequently appear as:
 - Developer experience vs runtime performance
@@ -105,8 +107,7 @@ In frontend systems, trade-offs frequently appear as:
 
 Architectural thinking is the act of **making these trade-offs visible**.
 
-**Image placeholder:**
-- `frontend-tradeoffs-map.png` – axes comparing DX, performance, maintainability, scalability
+<ImagePlaceholder title="axes comparing DX, performance, maintainability, scalability" chapter="2"></ImagePlaceholder>
 
 ---
 
@@ -149,8 +150,7 @@ Common practices include:
 
 Throwaway or low-quality code can unintentionally become reference implementations. For this reason, production-quality standards matter even in exploratory work.
 
-**Image placeholder:**
-- `architect-feedback-loop.png` – loop between architecture, code, validation, and learning
+<ImagePlaceholder title="loop between architecture, code, validation, and learning" chapter="2"></ImagePlaceholder>
 
 ---
 
@@ -168,8 +168,10 @@ An architect remains close to the development team to:
 - Mentor and coach
 - Detect structural erosion early
 
-> Architecture is the part of the system you can’t simply Google.  
-> The answer to most architecture questions is: *it depends*.
+<QuoteBlock>
+Architecture is the part of the system you can’t simply Google.
+The answer to most architecture questions is: *it depends*.
+</QuoteBlock>
 
 ---
 

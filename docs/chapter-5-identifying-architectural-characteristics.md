@@ -6,7 +6,9 @@ Many architectural failures do not come from poor implementation, but from **sup
 
 This chapter addresses a single problem:
 
-> How can architects translate vague domain concerns into concrete architectural characteristics without over-engineering the system?
+<QuoteBlock>
+How can architects translate vague domain concerns into concrete architectural characteristics without over-engineering the system?
+</QuoteBlock>
 
 ---
 
@@ -37,7 +39,9 @@ Understanding **domain goals** allows architects to translate concerns into arch
 
 For example:
 
-> It does not matter how fast a system is if it is unavailable when needed.
+<QuoteBlock>
+It does not matter how fast a system is if it is unavailable when needed.
+</QuoteBlock>
 
 Speed without availability does not serve the domain—it merely optimizes a metric.
 
@@ -47,11 +51,15 @@ Speed without availability does not serve the domain—it merely optimizes a met
 
 Most architectural characteristics originate from **explicit statements** in requirements documents. Others must be **decoded** from domain language.
 
-> Architects must often translate *what the domain says* into *what the system must structurally support*.
+<QuoteBlock>
+Architects must often translate *what the domain says* into *what the system must structurally support*.
+</QuoteBlock>
 
 A requirements document may never say “availability,” yet continuously emphasize uptime, reliability, or uninterrupted workflows.
 
-> “Great designers design, of course.” — Fred Brooks  
+<QuoteBlock cite="Fred Brooks">
+“Great designers design, of course.”
+</QuoteBlock>
 Experience reveals what requirements omit.
 
 ---
@@ -85,7 +93,9 @@ Architectural characteristics do not exist in isolation.
 
 Each one interacts with the others, often amplifying complexity. This is why **over-specifying characteristics** is a common architectural failure.
 
-> There are no wrong answers in architecture—only expensive ones.
+<QuoteBlock>
+There are no wrong answers in architecture—only expensive ones.
+</QuoteBlock>
 
 Trade-off analysis is not optional; it defines the architect’s role.
 
@@ -103,8 +113,10 @@ Every additional architectural characteristic:
 The goal is not to maximize characteristics, but to **minimize unnecessary ones**.
 
 A useful exercise:
-> After identifying architectural characteristics, try removing one or two.  
-> If the system still serves its core purpose, those characteristics were likely optional.
+<QuoteBlock>
+After identifying architectural characteristics, try removing one or two.
+If the system still serves its core purpose, those characteristics were likely optional.
+</QuoteBlock>
 
 Simplicity remains the underlying motivation.
 
@@ -124,28 +136,45 @@ Analysis does not slow decisions—it **prevents irreversible ones**.
 
 Below are common translations observed across projects:
 
-| Domain Concern              | Architectural Characteristics                    |
-|----------------------------|--------------------------------------------------|
-| Time & budget              | Simplicity, feasibility                          |
-| User satisfaction          | Performance, availability, fault tolerance, testability |
-| Time to market             | Agility, testability, deployability              |
-| Mergers & acquisitions     | Interoperability, scalability, extensibility     |
+<TableBlock>
+<table>
+  <thead>
+    <tr>
+      <th>Domain Concern</th>
+      <th>Architectural Characteristics</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Time &amp; budget</td>
+      <td>Simplicity, feasibility</td>
+    </tr>
+    <tr>
+      <td>User satisfaction</td>
+      <td>Performance, availability, fault tolerance, testability</td>
+    </tr>
+    <tr>
+      <td>Time to market</td>
+      <td>Agility, testability, deployability</td>
+    </tr>
+    <tr>
+      <td>Mergers &amp; acquisitions</td>
+      <td>Interoperability, scalability, extensibility</td>
+    </tr>
+  </tbody>
+</table>
+</TableBlock>
 
 These mappings are not prescriptions—they are patterns.
 
 ---
 
-## Frontend Context (React / Next.js Perspective)
+## Frontend Lens (React / Next.js Perspective)
 
-In frontend-heavy systems:
-- Availability may relate to **deployment resilience**
-- Performance often maps to **UX perception**
-- Testability affects long-term velocity more than initial delivery
-- Agility may justify architectural choices like modular component boundaries
-
-Backend characteristics exist, but they are not the focus here.
-
----
+<FrontendSection
+  lead="In frontend-heavy systems:"
+  bullets="[{&quot;icon&quot;: &quot;ShieldCheck&quot;, &quot;text&quot;: &quot;Availability may relate to **deployment resilience**&quot;}, {&quot;icon&quot;: &quot;Gauge&quot;, &quot;text&quot;: &quot;Performance often maps to **UX perception**&quot;}, {&quot;icon&quot;: &quot;Flask&quot;, &quot;text&quot;: &quot;Testability affects long-term velocity more than initial delivery&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;Agility may justify architectural choices like modular component boundaries&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;Backend characteristics exist, but they are not the focus here.&quot;}]"
+></FrontendSection>
 
 ## External References
 
@@ -156,14 +185,11 @@ Backend characteristics exist, but they are not the focus here.
 
 ## Visual Placeholders (For Later)
 
-> [Diagram Placeholder]  
-> *Domain concerns → Architectural characteristics → Structural decisions*
+<ImagePlaceholder title="Domain concerns → Architectural characteristics → Structural decisions" chapter="5"></ImagePlaceholder>
 
-> [Comparison Graphic Placeholder]  
-> *Explicit requirements vs implicit domain knowledge*
+<ImagePlaceholder title="Explicit requirements vs implicit domain knowledge" chapter="5"></ImagePlaceholder>
 
-> [Trade-off Matrix Placeholder]  
-> *Characteristics vs complexity impact*
+<ImagePlaceholder title="Characteristics vs complexity impact" chapter="5"></ImagePlaceholder>
 
 ---
 

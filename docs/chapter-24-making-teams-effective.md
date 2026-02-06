@@ -76,8 +76,7 @@ Pattern:
 
 Effectiveness here is both technical and interpersonal: leadership is part of the job.
 
-**Image placeholder:**
-- `architect-personality-spectrum.png` — tight constraints (control freak) ↔ balanced (effective) ↔ loose constraints (armchair)
+<ImagePlaceholder title="tight constraints (control freak) ↔ balanced (effective) ↔ loose constraints (armchair)" chapter="24"></ImagePlaceholder>
 
 ---
 
@@ -116,9 +115,7 @@ One architectural response is to create opportunities for parallelism:
 
 This is partly structural design and partly team design.
 
-**Image placeholder:**
-- `process-loss-vs-team-size.png` — potential productivity vs actual productivity curve
-- `parallel-work-streams.png` — modules/services enabling parallel development
+<ImagePlaceholder title="potential productivity vs actual productivity curve" chapter="24"></ImagePlaceholder>
 
 ---
 
@@ -133,8 +130,7 @@ This grows with group size. In meetings, an effective architect acts as facilita
 - creates psychological safety for dissent
 - draws concerns out early, before they become late-stage conflict or rework
 
-**Image placeholder:**
-- `pluralistic-ignorance-meeting.png` — “everyone nods, nobody believes it” dynamic
+<ImagePlaceholder title="“everyone nods, nobody believes it” dynamic" chapter="24"></ImagePlaceholder>
 
 ---
 
@@ -166,9 +162,7 @@ Good checklist candidates:
 - tasks where steps are frequently skipped
 - areas prone to “small” errors with large downstream effects
 
-**Image placeholders:**
-- `checklist-when-to-use.png` — suitable vs unsuitable checklist candidates
-- `automation-vs-checklist.png` — move automatable items out of checklist
+<ImagePlaceholder title="suitable vs unsuitable checklist candidates" chapter="24"></ImagePlaceholder>
 
 ### Ownership and Rationale
 Checklists work better when:
@@ -202,9 +196,7 @@ A practical practice:
 - when a build or deployment fails, do root-cause analysis
 - add a corresponding item to the release checklist so the failure mode is less likely to repeat
 
-**Image placeholders:**
-- `code-completion-checklist.png` — example checklist categories
-- `release-checklist-feedback-loop.png` — failure → RCA → checklist update loop
+<ImagePlaceholder title="example checklist categories" chapter="24"></ImagePlaceholder>
 
 ---
 
@@ -225,16 +217,10 @@ This also reduces “because it’s clean code” arguments that don’t survive
 
 ## Frontend Context (React / Next.js Lens)
 
-In frontend-heavy environments, the “too tight / too loose” constraint problem shows up as:
-- too tight: blocking UI delivery with excessive architectural ceremony and overly rigid patterns
-- too loose: inconsistent state handling, ad-hoc data fetching, scattered cross-cutting concerns, and unbounded shared UI libraries
-
-Effective team enablement often focuses on:
-- clear boundaries (feature modules, domain slices, BFF responsibilities)
-- lightweight governance (lint rules, architectural tests, ADRs for major decisions)
-- checklists only where automation can’t cover correctness (release readiness, accessibility checks, regression risk)
-
----
+<FrontendSection
+  lead="In frontend-heavy environments, the “too tight / too loose” constraint problem shows up as:"
+  bullets="[{&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;too tight: blocking UI delivery with excessive architectural ceremony and overly rigid patterns&quot;}, {&quot;icon&quot;: &quot;Database&quot;, &quot;text&quot;: &quot;too loose: inconsistent state handling, ad-hoc data fetching, scattered cross-cutting concerns, and unbounded shared UI libraries&quot;}, {&quot;icon&quot;: &quot;UsersThree&quot;, &quot;text&quot;: &quot;Effective team enablement often focuses on:&quot;}, {&quot;icon&quot;: &quot;FlowArrow&quot;, &quot;text&quot;: &quot;clear boundaries (feature modules, domain slices, BFF responsibilities)&quot;}, {&quot;icon&quot;: &quot;Flask&quot;, &quot;text&quot;: &quot;lightweight governance (lint rules, architectural tests, ADRs for major decisions)&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;checklists only where automation can’t cover correctness (release readiness, accessibility checks, regression risk)&quot;}]"
+></FrontendSection>
 
 ## Closing Perspective
 Making teams effective is not separate from architecture work. It is one of the primary ways architecture succeeds in real systems.

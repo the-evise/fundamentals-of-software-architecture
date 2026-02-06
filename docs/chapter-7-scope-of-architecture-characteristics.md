@@ -5,7 +5,9 @@ Architectural characteristics are often discussed as if they apply uniformly to 
 
 This chapter addresses the practical question:
 
-> Where do architectural characteristics *actually* apply, and how does that scope affect architectural choices?
+<QuoteBlock>
+Where do architectural characteristics *actually* apply, and how does that scope affect architectural choices?
+</QuoteBlock>
 
 ---
 
@@ -24,8 +26,7 @@ A common failure mode is optimizing one layer while another layer prevents succe
 
 If one critical element cannot support the intended characteristic, the characteristic does not meaningfully exist—regardless of how well other parts are designed.
 
-**Image placeholder:**
-- `characteristics-by-scope.png` — system vs service vs dependency scope (where qualities actually bind)
+<ImagePlaceholder title="system vs service vs dependency scope (where qualities actually bind)" chapter="7"></ImagePlaceholder>
 
 ---
 
@@ -35,7 +36,9 @@ A useful way to measure scope is the **architecture quantum**.
 
 The term *quantum* is borrowed from general usage as “the smallest unbreakable thing.” In this context:
 
-> An architecture quantum is the smallest part of the system that runs independently.
+<QuoteBlock>
+An architecture quantum is the smallest part of the system that runs independently.
+</QuoteBlock>
 
 If there is more than one quantum, there are **quanta**.
 
@@ -56,8 +59,7 @@ This definition gives architects a concrete unit of analysis:
 - what is cohesive enough to run independently?
 - what is tightly bound and therefore shares characteristics?
 
-**Image placeholder:**
-- `architecture-quantum-definition.png` — quantum boundaries + characteristics boundary overlay
+<ImagePlaceholder title="quantum boundaries + characteristics boundary overlay" chapter="7"></ImagePlaceholder>
 
 ---
 
@@ -72,8 +74,7 @@ This yields a structural consequence:
 
 This is not about technology preference; it is about what the architecture can change independently.
 
-**Image placeholder:**
-- `monolith-vs-microservices-quanta.png` — shared DB (1 quantum) vs per-service DB (many quanta)
+<ImagePlaceholder title="shared DB (1 quantum) vs per-service DB (many quanta)" chapter="7"></ImagePlaceholder>
 
 ---
 
@@ -104,8 +105,7 @@ This aligns with the quantum concept:
 - strong cohesion inside boundaries
 - controlled coupling across boundaries
 
-**Image placeholder:**
-- `bounded-contexts-frontend.png` — bounded contexts mapped to frontend feature domains
+<ImagePlaceholder title="bounded contexts mapped to frontend feature domains" chapter="7"></ImagePlaceholder>
 
 ---
 
@@ -137,8 +137,7 @@ These decisions may not change semantic coupling, but they strongly shape:
 - fault isolation
 - scalability
 
-**Image placeholder:**
-- `semantic-vs-implementation-coupling.png` — problem coupling vs chosen wiring
+<ImagePlaceholder title="problem coupling vs chosen wiring" chapter="7"></ImagePlaceholder>
 
 ---
 
@@ -164,8 +163,7 @@ Dynamic coupling describes runtime forces:
 
 Communication is a primary driver of dynamic coupling in distributed architectures.
 
-**Image placeholder:**
-- `static-vs-dynamic-coupling.png` — build-time dependency vs runtime call chain
+<ImagePlaceholder title="build-time dependency vs runtime call chain" chapter="7"></ImagePlaceholder>
 
 ---
 
@@ -180,8 +178,7 @@ For example:
 
 This mismatch becomes visible when analyzing at the quantum level rather than only at the system level.
 
-**Image placeholder:**
-- `sync-call-failure-propagation.png` — latency/failure ripple across synchronous dependencies
+<ImagePlaceholder title="latency/failure ripple across synchronous dependencies" chapter="7"></ImagePlaceholder>
 
 ---
 
@@ -202,21 +199,9 @@ The details of software architecture evolve rapidly. The responsibility to analy
 
 ## Frontend Context (React / Next.js Lens)
 
-Frontend systems often contain more than “a UI”:
-- the web app itself
-- a BFF layer (sometimes)
-- shared component libraries
-- shared design systems
-- shared data contracts
-
-Even within a single repo, you can still have multiple quanta if parts are independently deployable and cohesive.
-
-Scope questions become concrete quickly:
-- can this feature be released independently?
-- does it share critical runtime dependencies?
-- does it depend synchronously on other boundaries with different constraints?
-
----
+<FrontendSection
+  lead="Frontend systems often contain more than “a UI”:"
+  bullets="[{&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;the web app itself&quot;}, {&quot;icon&quot;: &quot;Timer&quot;, &quot;text&quot;: &quot;a BFF layer (sometimes)&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;shared component libraries&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;shared design systems&quot;}, {&quot;icon&quot;: &quot;BracketsCurly&quot;, &quot;text&quot;: &quot;shared data contracts&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;Even within a single repo, you can still have multiple quanta if parts are independently deployable and cohesive.&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;Scope questions become concrete quickly:&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;can this feature be released independently?&quot;}, {&quot;icon&quot;: &quot;Timer&quot;, &quot;text&quot;: &quot;does it share critical runtime dependencies?&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;does it depend synchronously on other boundaries with different constraints?&quot;}]"></FrontendSection>
 
 ## Closing Perspective
 Scope is not an abstraction for architecture diagrams; it is the practical boundary of where architectural characteristics can be real.

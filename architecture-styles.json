@@ -1,0 +1,551 @@
+[
+  {
+    "Architecture Style": "Layered",
+    "Overall Cost": {
+      "value": 1,
+      "explanation": "primary strength"
+    },
+    "structural": {
+      "Partition Type": {
+        "value": "Technical",
+        "explanation": ""
+      },
+      "Number of Quanta": {
+        "value": 1,
+        "explanation": ""
+      },
+      "Simplicity": {
+        "value": 5,
+        "explanation": "primary strength"
+      },
+      "Modularity": {
+        "value": 1,
+        "explanation": ""
+      }
+    },
+    "engineering": {
+      "Maintainability": {
+        "value": 1,
+        "explanation": ""
+      },
+      "Testability": {
+        "value": 2,
+        "explanation": ""
+      },
+      "Deployability": {
+        "value": 1,
+        "explanation": "infrequent, high risk"
+      },
+      "Evolvability": {
+        "value": 1,
+        "explanation": ""
+      }
+    },
+    "operational": {
+      "Responsiveness": {
+        "value": 3,
+        "explanation": "only with careful design"
+      },
+      "Scalability": {
+        "value": 1,
+        "explanation": "ratings diminish quickly as scaled"
+      },
+      "Elasticity": {
+        "value": 1,
+        "explanation": ""
+      },
+      "Fault Tolerance": {
+        "value": 1,
+        "explanation": ""
+      }
+    }
+  },
+  {
+    "Architecture Style": "Modular Monolith",
+    "Cost": {
+      "value": 1,
+      "explanation": "low budget, time constraints friendly"
+    },
+    "structural": {
+      "Partition Type": {
+        "value": "Domain",
+        "explanation": "avoid when technical changes are a priority"
+      },
+      "Number of Quanta": {
+        "value": 1,
+        "explanation": ""
+      },
+      "Simplicity": {
+        "value": 5,
+        "explanation": "good choice starting out a new system"
+      },
+      "Modularity": {
+        "value": 2,
+        "explanation": "DDD friendly"
+      }
+    },
+    "engineering": {
+      "Maintainability": {
+        "value": 2,
+        "explanation": ""
+      },
+      "Testability": {
+        "value": 2,
+        "explanation": ""
+      },
+      "Deployability": {
+        "value": 2,
+        "explanation": ""
+      },
+      "Evolvability": {
+        "value": 2,
+        "explanation": "easy to add new features*"
+      }
+    },
+    "operational": {
+      "Responsiveness": {
+        "value": 3,
+        "explanation": ""
+      },
+      "Scalability": {
+        "value": 1,
+        "explanation": ""
+      },
+      "Elasticity": {
+        "value": 1,
+        "explanation": ""
+      },
+      "Fault Tolerance": {
+        "value": 1,
+        "explanation": ""
+      }
+    }
+  },
+  {
+    "Architecture Style": "Pipeline",
+    "Overall Cost": {
+      "value": 1,
+      "explanation": "primary strength"
+    },
+    "structural": {
+      "Partition Type": {
+        "value": "Technical",
+        "explanation": ""
+      },
+      "Number of Quanta": {
+        "value": 1,
+        "explanation": ""
+      },
+      "Simplicity": {
+        "value": 4,
+        "explanation": "primary strength"
+      },
+      "Modularity": {
+        "value": 2,
+        "explanation": "workflow-based, step-by-step"
+      }
+    },
+    "engineering": {
+      "Maintainability": {
+        "value": 2,
+        "explanation": "any filter can be modified"
+      },
+      "Testability": {
+        "value": 3,
+        "explanation": ""
+      },
+      "Deployability": {
+        "value": 2,
+        "explanation": "frequent"
+      },
+      "Evolvability": {
+        "value": 3,
+        "explanation": ""
+      }
+    },
+    "operational": {
+      "Responsiveness": {
+        "value": 3,
+        "explanation": ""
+      },
+      "Scalability": {
+        "value": 1,
+        "explanation": "increase the rating by async communication and distributed but at the cost of simplicity and increased overall cost"
+      },
+      "Elasticity": {
+        "value": 1,
+        "explanation": "increase the rating by async communication and distributed but at the cost of simplicity and increased overall cost"
+      },
+      "Fault Tolerance": {
+        "value": 1,
+        "explanation": ""
+      }
+    }
+  },
+  {
+    "Architecture Style": "MicroKernel",
+    "Overall Cost": {
+      "value": 1,
+      "explanation": ""
+    },
+    "structural": {
+      "Partition Type": {
+        "value": "Both",
+        "explanation": ""
+      },
+      "Number of Quanta": {
+        "value": 1,
+        "explanation": ""
+      },
+      "Simplicity": {
+        "value": 4,
+        "explanation": ""
+      },
+      "Modularity": {
+        "value": 3,
+        "explanation": ""
+      }
+    },
+    "engineering": {
+      "Maintainability": {
+        "value": 3,
+        "explanation": ""
+      },
+      "Testability": {
+        "value": 3,
+        "explanation": "isolated plug-in testing"
+      },
+      "Deployability": {
+        "value": 3,
+        "explanation": "isolated plug-in deploy"
+      },
+      "Evolvability": {
+        "value": 3,
+        "explanation": "isolated plug-in modification, customization god"
+      }
+    },
+    "operational": {
+      "Responsiveness": {
+        "value": 3,
+        "explanation": ""
+      },
+      "Scalability": {
+        "value": 1,
+        "explanation": "generally small applications"
+      },
+      "Elasticity": {
+        "value": 1,
+        "explanation": ""
+      },
+      "Fault Tolerance": {
+        "value": 1,
+        "explanation": ""
+      }
+    }
+  },
+  {
+    "Architecture Style": "Service-Based",
+    "Cost": {
+      "value": 2,
+      "explanation": ""
+    },
+    "structural": {
+      "Partition Type": {
+        "value": "Domain",
+        "explanation": "DDD friendly"
+      },
+      "Number of Quanta": {
+        "value": 1,
+        "explanation": "1 to many"
+      },
+      "Simplicity": {
+        "value": 3,
+        "explanation": "easiest distributed to implement"
+      },
+      "Modularity": {
+        "value": 3,
+        "explanation": ""
+      }
+    },
+    "engineering": {
+      "Maintainability": {
+        "value": 4,
+        "explanation": "higher the cost, higher the rating"
+      },
+      "Testability": {
+        "value": 4,
+        "explanation": "higher the cost, higher the rating"
+      },
+      "Deployability": {
+        "value": 4,
+        "explanation": "higher the cost, higher the rating"
+      },
+      "Evolvability": {
+        "value": 4,
+        "explanation": "higher the cost, higher the rating"
+      }
+    },
+    "operational": {
+      "Responsiveness": {
+        "value": 3,
+        "explanation": ""
+      },
+      "Scalability": {
+        "value": 3,
+        "explanation": ""
+      },
+      "Elasticity": {
+        "value": 2,
+        "explanation": ""
+      },
+      "Fault Tolerance": {
+        "value": 3,
+        "explanation": ""
+      }
+    }
+  },
+  {
+    "Architecture Style": "Event-Driven",
+    "Overall Cost": {
+      "value": 3,
+      "explanation": ""
+    },
+    "structural": {
+      "Partition Type": {
+        "value": "Technical",
+        "explanation": ""
+      },
+      "Number of Quanta": {
+        "value": 1,
+        "explanation": "1 to many depending on db interactions"
+      },
+      "Simplicity": {
+        "value": 2,
+        "explanation": "complicated but powerful"
+      },
+      "Modularity": {
+        "value": 4,
+        "explanation": ""
+      }
+    },
+    "engineering": {
+      "Maintainability": {
+        "value": 4,
+        "explanation": ""
+      },
+      "Testability": {
+        "value": 2,
+        "explanation": "nondeterministic, dynamic event flows"
+      },
+      "Deployability": {
+        "value": 3,
+        "explanation": ""
+      },
+      "Evolvability": {
+        "value": 5,
+        "explanation": "very dynamic"
+      }
+    },
+    "operational": {
+      "Responsiveness": {
+        "value": 5,
+        "explanation": "async communication w/ highly parallel processing"
+      },
+      "Scalability": {
+        "value": 4,
+        "explanation": ""
+      },
+      "Elasticity": {
+        "value": 3,
+        "explanation": ""
+      },
+      "Fault Tolerance": {
+        "value": 5,
+        "explanation": "decoupled, async event processors"
+      }
+    }
+  },
+  {
+    "Architecture Style": "Space-based",
+    "Overall Cost": {
+      "value": 4,
+      "explanation": "due to complexity, caching products, scale"
+    },
+    "structural": {
+      "Partition Type": {
+        "value": "Technical",
+        "explanation": ""
+      },
+      "Number of Quanta": {
+        "value": 1,
+        "explanation": "1 to many depending on UI design and communication of processing units"
+      },
+      "Simplicity": {
+        "value": 1,
+        "explanation": "very complicated"
+      },
+      "Modularity": {
+        "value": 3,
+        "explanation": ""
+      }
+    },
+    "engineering": {
+      "Maintainability": {
+        "value": 3,
+        "explanation": ""
+      },
+      "Testability": {
+        "value": 1,
+        "explanation": ""
+      },
+      "Deployability": {
+        "value": 3,
+        "explanation": ""
+      },
+      "Evolvability": {
+        "value": 3,
+        "explanation": ""
+      }
+    },
+    "operational": {
+      "Responsiveness": {
+        "value": 5,
+        "explanation": "driving characteristic"
+      },
+      "Scalability": {
+        "value": 5,
+        "explanation": "driving characteristic"
+      },
+      "Elasticity": {
+        "value": 5,
+        "explanation": "driving characteristic"
+      },
+      "Fault Tolerance": {
+        "value": 2,
+        "explanation": ""
+      }
+    }
+  },
+  {
+    "Architecture Style": "SOA",
+    "Overall Cost": {
+      "value": 4,
+      "explanation": ""
+    },
+    "structural": {
+      "Partition Type": {
+        "value": "Technical",
+        "explanation": ""
+      },
+      "Number of Quanta": {
+        "value": 1,
+        "explanation": ""
+      },
+      "Simplicity": {
+        "value": 1,
+        "explanation": ""
+      },
+      "Modularity": {
+        "value": 4,
+        "explanation": ""
+      }
+    },
+    "engineering": {
+      "Maintainability": {
+        "value": 1,
+        "explanation": ""
+      },
+      "Testability": {
+        "value": 1,
+        "explanation": "poorly supported"
+      },
+      "Deployability": {
+        "value": 1,
+        "explanation": "poorly supported"
+      },
+      "Evolvability": {
+        "value": 1,
+        "explanation": ""
+      }
+    },
+    "operational": {
+      "Responsiveness": {
+        "value": 2,
+        "explanation": ""
+      },
+      "Scalability": {
+        "value": 4,
+        "explanation": ""
+      },
+      "Elasticity": {
+        "value": 3,
+        "explanation": ""
+      },
+      "Fault Tolerance": {
+        "value": 3,
+        "explanation": ""
+      }
+    }
+  },
+  {
+    "Architecture Style": "Microservices",
+    "Overall Cost": {
+      "value": 5,
+      "explanation": ""
+    },
+    "structural": {
+      "Partition Type": {
+        "value": "Domain",
+        "explanation": ""
+      },
+      "Number of Quanta": {
+        "value": "many",
+        "explanation": "1 to many"
+      },
+      "Simplicity": {
+        "value": 1,
+        "explanation": ""
+      },
+      "Modularity": {
+        "value": 5,
+        "explanation": ""
+      }
+    },
+    "engineering": {
+      "Maintainability": {
+        "value": 5,
+        "explanation": ""
+      },
+      "Testability": {
+        "value": 5,
+        "explanation": ""
+      },
+      "Deployability": {
+        "value": 5,
+        "explanation": ""
+      },
+      "Evolvability": {
+        "value": 5,
+        "explanation": ""
+      }
+    },
+    "operational": {
+      "Responsiveness": {
+        "value": 2,
+        "explanation": "refer to myths about distributed architectures*"
+      },
+      "Scalability": {
+        "value": 5,
+        "explanation": ""
+      },
+      "Elasticity": {
+        "value": 4,
+        "explanation": ""
+      },
+      "Fault Tolerance": {
+        "value": 5,
+        "explanation": ""
+      }
+    }
+  }
+]

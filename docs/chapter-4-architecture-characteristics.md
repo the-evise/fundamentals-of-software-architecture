@@ -35,8 +35,7 @@ To be considered an architectural characteristic, a requirement must:
 
 If a requirement does not shape structure or materially affect outcomes, it remains a design or implementation concern rather than an architectural one.
 
-**Image placeholder:**
-- `architectural-characteristics-triangle.png` – non-domain, structural impact, criticality
+<ImagePlaceholder title="non-domain, structural impact, criticality" chapter="4"></ImagePlaceholder>
 
 ---
 
@@ -85,8 +84,7 @@ Common examples include:
 *Frontend context:*  
 Page load performance, SSR strategies, caching, and client-side error boundaries often reflect these concerns.
 
-**Image placeholder:**
-- `operational-characteristics.png` – runtime-focused capabilities
+<ImagePlaceholder title="runtime-focused capabilities" chapter="4"></ImagePlaceholder>
 
 ---
 
@@ -107,8 +105,7 @@ Common examples include:
 *Frontend context:*  
 Component composition, design systems, and build tooling decisions often directly impact these characteristics.
 
-**Image placeholder:**
-- `structural-characteristics.png` – internal structure and changeability
+<ImagePlaceholder title="internal structure and changeability" chapter="4"></ImagePlaceholder>
 
 ---
 
@@ -143,8 +140,7 @@ Common examples include:
 
 These concerns often interact with both domain behavior and system structure.
 
-**Image placeholder:**
-- `cross-cutting-characteristics.png` – characteristics spanning all layers
+<ImagePlaceholder title="characteristics spanning all layers" chapter="4"></ImagePlaceholder>
 
 ---
 
@@ -161,7 +157,9 @@ Several observations consistently appear:
 
 Because there are no universal definitions, ambiguity is common. Clear, shared understanding gives architectural decisions shape and intent.
 
-> “Never shoot for the best architecture, but rather for the least worst one.”
+<QuoteBlock>
+“Never shoot for the best architecture, but rather for the least worst one.”
+</QuoteBlock>
 
 Attempting to maximize all characteristics simultaneously is unrealistic. Architecture becomes a balancing act among competing concerns.
 

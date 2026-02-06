@@ -38,8 +38,7 @@ Many layered systems use four conventional layers:
 
 Each layer forms an abstraction around a specific responsibility. Requests flow through layers to satisfy business needs.
 
-**Image placeholder:**
-- `layered-architecture-4-layers.png` — presentation → business → persistence → database
+<ImagePlaceholder title="presentation → business → persistence → database" chapter="10"></ImagePlaceholder>
 
 ---
 
@@ -53,8 +52,7 @@ Because partitioning is technical, a business capability is typically spread acr
 
 This diffusion makes the style less compatible with domain-oriented decomposition such as DDD bounded contexts.
 
-**Image placeholder:**
-- `domain-spread-across-layers.png` — one business feature threaded through all layers
+<ImagePlaceholder title="one business feature threaded through all layers" chapter="10"></ImagePlaceholder>
 
 ---
 
@@ -73,8 +71,7 @@ Open layers are sometimes introduced for efficiency or convenience, but ungovern
 
 A recurring risk: failing to document which layers are open or closed—and why—commonly leads to brittle architectures that are difficult to test, maintain, and deploy.
 
-**Image placeholder:**
-- `open-vs-closed-layers.png` — strict flow vs bypass paths
+<ImagePlaceholder title="strict flow vs bypass paths" chapter="10"></ImagePlaceholder>
 
 ---
 
@@ -109,8 +106,7 @@ Two typical reactions appear:
 - selectively open some layers to reduce overhead (trade-off: coupling increases)
 - reconsider the architecture style entirely
 
-**Image placeholder:**
-- `architecture-sinkhole.png` — request passing layers with no meaningful work
+<ImagePlaceholder title="request passing layers with no meaningful work" chapter="10"></ImagePlaceholder>
 
 ---
 
@@ -126,8 +122,7 @@ Because it is commonly monolithic with limited modularity:
 
 These are not universal truths—only common outcomes when layered systems grow large.
 
-**Image placeholder:**
-- `monolith-deployment-latency.png` — layer traversal vs distributed latency points
+<ImagePlaceholder title="layer traversal vs distributed latency points" chapter="10"></ImagePlaceholder>
 
 ---
 
@@ -142,8 +137,7 @@ Fitness functions support this style well:
 
 This creates an opportunity for automated governance that is simpler than in many distributed styles.
 
-**Image placeholder:**
-- `layered-fitness-functions.png` — boundary rules → checks → violations
+<ImagePlaceholder title="boundary rules → checks → violations" chapter="10"></ImagePlaceholder>
 
 ---
 
@@ -177,8 +171,7 @@ Common tendencies:
 - scalability and elasticity remain low (often a “quantum of one” system)
 - responsiveness can be high with careful design (caching, concurrency), but closed layering and sinkholes reduce inherent parallelism
 
-**Image placeholder:**
-- `layered-characteristics-radar.png` — qualitative ratings across characteristics
+<StyleRatings style-key="Layered"></StyleRatings>
 
 ---
 
@@ -205,21 +198,11 @@ This approach trades architectural ambition for delivery feasibility—sometimes
 
 ## Frontend Lens (React / Next.js)
 
-Frontend projects often recreate layering implicitly:
-- presentation (components/pages)
-- business (domain logic, orchestration)
-- persistence (API clients, cache, state stores)
-- data (backend or client storage)
-
-A layered frontend can remain maintainable if:
-- dependency direction is explicit
-- boundaries are enforced (imports and contracts)
-- sinkholes are monitored (no “fake layers” with pass-through logic)
-
-**Image placeholder:**
-- `frontend-layering-example.png` — React UI → domain → data clients → backend
-
----
+<FrontendSection
+  lead="Frontend projects often recreate layering implicitly:"
+  bullets="[{&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;presentation (components/pages)&quot;}, {&quot;icon&quot;: &quot;ChartLine&quot;, &quot;text&quot;: &quot;business (domain logic, orchestration)&quot;}, {&quot;icon&quot;: &quot;BracketsCurly&quot;, &quot;text&quot;: &quot;persistence (API clients, cache, state stores)&quot;}, {&quot;icon&quot;: &quot;Database&quot;, &quot;text&quot;: &quot;data (backend or client storage)&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;A layered frontend can remain maintainable if:&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;dependency direction is explicit&quot;}, {&quot;icon&quot;: &quot;BracketsCurly&quot;, &quot;text&quot;: &quot;boundaries are enforced (imports and contracts)&quot;}, {&quot;icon&quot;: &quot;ChartLine&quot;, &quot;text&quot;: &quot;sinkholes are monitored (no “fake layers” with pass-through logic)&quot;}]"
+  imageTitle="React UI → domain → data clients → backend"
+  imageChapter="10"></FrontendSection>
 
 ## Related Pattern: Business Delegate
 
@@ -230,8 +213,7 @@ This pattern often appears where teams want:
 - isolation of integration details
 - stable interfaces to business workflows
 
-**Image placeholder:**
-- `business-delegate.png` — UI → delegate → business services
+<ImagePlaceholder title="UI → delegate → business services" chapter="10"></ImagePlaceholder>
 
 ---
 

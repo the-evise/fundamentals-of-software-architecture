@@ -18,8 +18,7 @@ Filters typically perform composite behavior through sequencing rather than cent
 
 Even if a filter is implemented as a single class/file, it is still an architectural component.
 
-**Image placeholder:**
-- `pipes-and-filters-topology.png` — producer → transformer → tester → consumer connected by pipes
+<ImagePlaceholder title="producer → transformer → tester → consumer connected by pipes" chapter="12"></ImagePlaceholder>
 
 ---
 
@@ -50,8 +49,7 @@ Four filter types are commonly referenced:
    Terminal point for the pipeline flow.  
    Often persists results or presents output.
 
-**Image placeholder:**
-- `filter-types.png` — producer/transformer/tester/consumer annotated along a pipeline
+<ImagePlaceholder title="producer/transformer/tester/consumer annotated along a pipeline" chapter="12"></ImagePlaceholder>
 
 ---
 
@@ -71,8 +69,7 @@ Because the pipeline’s correctness relies on contract stability, governance is
 - compatibility testing
 - clear ownership of contracts
 
-**Image placeholder:**
-- `pipe-contracts.png` — pipe schema contract with downstream dependency highlight
+<ImagePlaceholder title="pipe schema contract with downstream dependency highlight" chapter="12"></ImagePlaceholder>
 
 ---
 
@@ -90,8 +87,7 @@ Most pipeline implementations are monolithic, but the style can be deployed in d
 
 Distributed deployment increases operational complexity and introduces distributed computing constraints (latency, reliability, versioning), but may help in modular scaling and independent evolution of filters.
 
-**Image placeholder:**
-- `monolith-vs-distributed-pipeline.png` — in-process pipeline vs filter-as-services pipeline
+<ImagePlaceholder title="in-process pipeline vs filter-as-services pipeline" chapter="12"></ImagePlaceholder>
 
 ---
 
@@ -114,8 +110,7 @@ Because workflows are sequential and contracts are explicit, pipeline designs be
 
 These questions shape whether the pipeline remains linear, branches, or requires additional mechanisms (which may push the design toward alternative styles).
 
-**Image placeholder:**
-- `pipeline-error-paths.png` — fatal error stop vs routed error output
+<ImagePlaceholder title="fatal error stop vs routed error output" chapter="12"></ImagePlaceholder>
 
 ---
 
@@ -128,8 +123,7 @@ Teams sometimes use lightweight conventions (for example, tagging filter types i
 
 This is less about naming and more about preventing gradual responsibility drift.
 
-**Image placeholder:**
-- `filter-responsibility-drift.png` — narrow filter vs bloated filter with too many concerns
+<ImagePlaceholder title="narrow filter vs bloated filter with too many concerns" chapter="12"></ImagePlaceholder>
 
 ---
 
@@ -167,8 +161,7 @@ Common downsides:
 - deployment risk and testing completeness (especially as filter count grows)
 - scalability/elasticity/fault tolerance are not inherent benefits of the style
 
-**Image placeholder:**
-- `pipeline-characteristics-radar.png` — qualitative ratings across characteristics
+<StyleRatings style-key="Pipeline" />
 
 ---
 
@@ -191,14 +184,10 @@ In many non-deterministic workflow scenarios, event-driven architectures are oft
 
 ## Frontend Context (React / Next.js Lens)
 
-Pipeline thinking appears in frontend systems primarily in:
-- build and compile pipelines (bundling, transforms, minification)
-- data processing flows (validation → normalization → enrichment → rendering)
-- UI workflows that are truly stepwise and deterministic (wizards, staged forms)
-
-For interactive, branching user journeys, pipelines can become awkward unless combined with other architectural concepts (state machines, event-driven flows, orchestration).
-
----
+<FrontendSection
+  lead="Pipeline thinking appears in frontend systems primarily in:"
+  bullets="[{&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;build and compile pipelines (bundling, transforms, minification)&quot;}, {&quot;icon&quot;: &quot;Gauge&quot;, &quot;text&quot;: &quot;data processing flows (validation → normalization → enrichment → rendering)&quot;}, {&quot;icon&quot;: &quot;FlowArrow&quot;, &quot;text&quot;: &quot;UI workflows that are truly stepwise and deterministic (wizards, staged forms)&quot;}, {&quot;icon&quot;: &quot;Broadcast&quot;, &quot;text&quot;: &quot;For interactive, branching user journeys, pipelines can become awkward unless combined with other architectural concepts (state machines, event-driven flows, orchestration).&quot;}]"
+></FrontendSection>
 
 ## Closing Perspective
 Pipeline architecture is a strong fit for step-by-step processing where ordering and determinism are central. Its simplicity and modularity are structural advantages—so long as filters remain narrow and contracts are governed.

@@ -7,8 +7,9 @@ As frontend applications scale, structural decay often appears long before visib
 
 ## Modularity as an Organizing Principle
 
-> “95% of the words written about software architecture are spent extolling the benefits of modularity, and little, if anything, is said about how to achieve it.”  
-> — *Glenford J. Myers*
+<QuoteBlock cite="Glenford J. Myers">
+“95% of the words written about software architecture are spent extolling the benefits of modularity, and little, if anything, is said about how to achieve it.”
+</QuoteBlock>
 
 Modularity is not a feature of a system—it is an **organizing principle**.
 
@@ -23,8 +24,7 @@ In frontend systems, these groupings might be:
 - State slices
 - Pages and layouts
 
-**Image placeholder:**
-- `system-entropy-and-modularity.png` – order vs entropy over time in software systems
+<ImagePlaceholder title="order vs entropy over time in software systems" chapter="3"></ImagePlaceholder>
 
 ---
 
@@ -35,8 +35,9 @@ Granularity describes *how large those parts are*.
 
 Moving from a monolithic architecture (for example, a traditional layered system) toward a more distributed style (such as microservices or micro-frontends) increases modularity. However, the **size** of each module—their granularity—introduces its own trade-offs.
 
-> “Embrace modularity, but beware of granularity.”  
-> — Mark Richards
+<QuoteBlock cite="Mark Richards">
+“Embrace modularity, but beware of granularity.”
+</QuoteBlock>
 
 In frontend terms:
 - Too coarse: large feature folders that become mini-monoliths
@@ -44,8 +45,7 @@ In frontend terms:
 
 The tension is structural, not stylistic.
 
-**Image placeholder:**
-- `modularity-vs-granularity.png` – coarse vs fine-grained module boundaries
+<ImagePlaceholder title="coarse vs fine-grained module boundaries" chapter="3"></ImagePlaceholder>
 
 ---
 
@@ -76,8 +76,9 @@ Modularity can be discussed qualitatively, but architecture also offers **analyt
 
 Cohesion measures how strongly related the elements inside a module are.
 
-> “A cohesive module should not be divided; doing so increases coupling and reduces readability.”  
-> — *Larry Constantine*
+<QuoteBlock cite="Larry Constantine">
+“A cohesive module should not be divided; doing so increases coupling and reduces readability.”
+</QuoteBlock>
 
 High cohesion implies:
 - Clear responsibility
@@ -108,8 +109,7 @@ Low cohesion often signals:
 
 Frontend systems often drift toward **temporal or logical cohesion** as they grow.
 
-**Image placeholder:**
-- `cohesion-spectrum.png` – cohesion types from strong to weak
+<ImagePlaceholder title="cohesion types from strong to weak" chapter="3"></ImagePlaceholder>
 
 ---
 
@@ -129,8 +129,7 @@ This leads to metrics such as:
 
 These values form the well-known **Zones of Pain and Uselessness** diagram.
 
-**Image placeholder:**
-- `zones-of-pain-and-uselessness.png` – abstractness vs instability chart
+<ImagePlaceholder title="abstractness vs instability chart" chapter="3"></ImagePlaceholder>
 
 ---
 
@@ -157,8 +156,7 @@ Connascence shifts the conversation from *dependency count* to *dependency stren
 
 From an architectural perspective, weaker forms are preferable—especially across module boundaries.
 
-**Image placeholder:**
-- `connascence-hierarchy.png` – weaker to stronger connascence types
+<ImagePlaceholder title="weaker to stronger connascence types" chapter="3"></ImagePlaceholder>
 
 ---
 
@@ -175,8 +173,7 @@ In modern terms, this aligns closely with **bounded contexts** from Domain-Drive
 
 Frontend systems naturally grow. Without attention, small issues scale disproportionately.
 
-**Image placeholder:**
-- `locality-and-distance.png` – coupling strength vs component distance
+<ImagePlaceholder title="coupling strength vs component distance" chapter="3"></ImagePlaceholder>
 
 ---
 

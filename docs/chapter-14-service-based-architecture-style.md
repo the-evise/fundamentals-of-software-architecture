@@ -18,8 +18,7 @@ Service-based architecture is a distributed architecture style commonly used for
 
 Services typically represent a domain or subdomain, and are often called **domain services**.
 
-**Image placeholder:**
-- `service-based-topology.png` — UI → domain services (coarse) → shared DB (optional)
+<ImagePlaceholder title="UI → domain services (coarse) → shared DB (optional)" chapter="14"></ImagePlaceholder>
 
 ---
 
@@ -39,8 +38,7 @@ Excessive service-to-service communication is often interpreted as either:
 
 Another recurring risk is creating **too many** domain services. When a shared monolithic database is used, a common recommendation is to keep service count modest (often cited as “no more than ~12”) to reduce change control, scalability, and fault tolerance complexity.
 
-**Image placeholder:**
-- `domain-services-independence.png` — services isolated; orchestration at UI/gateway
+<ImagePlaceholder title="services isolated; orchestration at UI/gateway" chapter="14"></ImagePlaceholder>
 
 ---
 
@@ -58,8 +56,7 @@ Because domain services are coarse, each service frequently contains its own int
 
 Regardless of internal design, each domain service must expose an access surface—an API facade—to execute business functionality and orchestrate requests from UI.
 
-**Image placeholder:**
-- `domain-service-internal-variants.png` — layered service vs subdomain-partitioned service
+<ImagePlaceholder title="layered service vs subdomain-partitioned service" chapter="14"></ImagePlaceholder>
 
 ---
 
@@ -72,9 +69,7 @@ Service-based architecture supports multiple UI interaction shapes. Common varia
 
 This flexibility contributes to the style’s popularity.
 
-**Image placeholders:**
-- `service-based-ui-variants.png` — multiple UI patterns
-- `api-layer-between-ui-and-services.png` — UI → API gateway → services
+<ImagePlaceholder title="multiple UI patterns" chapter="14"></ImagePlaceholder>
 
 ---
 
@@ -93,8 +88,7 @@ However, it concentrates risk:
 
 The database often becomes the primary place where “hidden coupling” exists.
 
-**Image placeholder:**
-- `service-based-db-topologies.png` — shared DB vs logically partitioned DB vs partial separation
+<ImagePlaceholder title="shared DB vs logically partitioned DB vs partial separation" chapter="14"></ImagePlaceholder>
 
 ---
 
@@ -106,15 +100,13 @@ A common acceleration of that ripple is shared libraries:
 - a single shared library containing DB entities used by many services
 - changes to that library propagate impact everywhere
 
-**Image placeholder:**
-- `single-shared-entity-library-impact.png` — one entity lib affects all services
+<ImagePlaceholder title="one entity lib affects all services" chapter="14"></ImagePlaceholder>
 
 One mitigation is **logical partitioning** of the database and reflecting that partitioning in shared libraries:
 - multiple domain-specific entity libraries
 - clearer visibility into what services are impacted by changes
 
-**Image placeholder:**
-- `multiple-domain-entity-libraries.png` — entity libs aligned to data domains
+<ImagePlaceholder title="entity libs aligned to data domains" chapter="14"></ImagePlaceholder>
 
 Another organizational mitigation sometimes appears:
 - locking common entity objects in version control
@@ -137,8 +129,7 @@ Common governance targets:
 - control database coupling and schema evolution
 - detect “too many services” early (granularity creep)
 
-**Image placeholder:**
-- `service-based-governance.png` — checks for cross-service change, DB coupling, comms limits
+<ImagePlaceholder title="checks for cross-service change, DB coupling, comms limits" chapter="14"></ImagePlaceholder>
 
 ---
 
@@ -155,8 +146,7 @@ Observations by topology:
 - **Complicated subsystem teams**: can focus on complex domain/subdomain processing within specific services
 - **Platform teams**: can leverage modularity for tooling, pipelines, shared runtime standards, and gateways
 
-**Image placeholder:**
-- `service-based-team-alignment.png` — teams mapped to domain services
+<ImagePlaceholder title="teams mapped to domain services" chapter="14"></ImagePlaceholder>
 
 ---
 
@@ -169,8 +159,7 @@ Service-based architecture often yields multiple quanta:
 
 Even with separate deployments, shared data topology can pull quanta toward tighter coupling at the persistence boundary.
 
-**Image placeholder:**
-- `service-based-quanta.png` — separate quanta with a shared DB coupling point
+<ImagePlaceholder title="separate quanta with a shared DB coupling point" chapter="14"></ImagePlaceholder>
 
 ---
 
@@ -190,7 +179,12 @@ Common constraints:
 This style is often described as one of the most cost-effective distributed architectures to implement: it provides meaningful modularity without requiring distributed orchestration/choreography as a default capability.
 
 A recurring framing:
-> “Not every portion of an application needs to be microservices.” — Mark Richards
+<QuoteBlock cite="Mark Richards">
+“Not every portion of an application needs to be microservices.”
+</QuoteBlock>
+
+
+<StyleRatings style-key="Service-Based" />
 
 ---
 
@@ -210,14 +204,10 @@ It tends to strain when:
 
 ## Frontend Context (React / Next.js Lens)
 
-From a frontend perspective, service-based architecture commonly manifests as:
-- UI interacting with a small set of coarse domain APIs
-- an API gateway/BFF providing orchestration and response shaping
-- explicit domain boundaries in contracts that map well to frontend feature modules
-
-It is typically easier for frontend teams than microservices-heavy environments because the number of services and cross-service coordination surface are intentionally constrained.
-
----
+<FrontendSection
+  lead="From a frontend perspective, service-based architecture commonly manifests as:"
+  bullets="[{&quot;icon&quot;: &quot;BracketsCurly&quot;, &quot;text&quot;: &quot;UI interacting with a small set of coarse domain APIs&quot;}, {&quot;icon&quot;: &quot;BracketsCurly&quot;, &quot;text&quot;: &quot;an API gateway/BFF providing orchestration and response shaping&quot;}, {&quot;icon&quot;: &quot;BracketsCurly&quot;, &quot;text&quot;: &quot;explicit domain boundaries in contracts that map well to frontend feature modules&quot;}, {&quot;icon&quot;: &quot;UsersThree&quot;, &quot;text&quot;: &quot;It is typically easier for frontend teams than microservices-heavy environments because the number of services and cross-service coordination surface are intentionally constrained.&quot;}]"
+></FrontendSection>
 
 ## Closing Perspective
 Service-based architecture trades fine-grained independence for pragmatism:

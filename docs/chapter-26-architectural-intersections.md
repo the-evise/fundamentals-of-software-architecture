@@ -40,8 +40,7 @@ An architecture must align with:
 - **Generative AI**
     - how AI affects implementation quality, governance, and decision-making
 
-**Image placeholder:**
-- `architecture-intersections-map.png` — architecture at center with spokes to each intersection
+<ImagePlaceholder title="architecture at center with spokes to each intersection" chapter="26"></ImagePlaceholder>
 
 ---
 
@@ -69,8 +68,7 @@ Example shape:
 
 The intersection failure is not “bad engineering,” but conflicting optimization targets.
 
-**Image placeholder:**
-- `characteristics-misalignment.png` — team A optimizes X, business needs Y
+<ImagePlaceholder title="team A optimizes X, business needs Y" chapter="26"></ImagePlaceholder>
 
 ---
 
@@ -93,9 +91,7 @@ Without guidance and governance, teams often default to “whatever seems conven
 Automated governance can enforce structure:
 - for TypeScript/JavaScript, tools like **tsarch** can help enforce boundaries and dependency rules
 
-**Image placeholders:**
-- `logical-architecture-vs-code-structure.png` — intended components mapped to actual folders
-- `dependency-boundary-check.png` — allowed vs forbidden import directions
+<ImagePlaceholder title="intended components mapped to actual folders" chapter="26"></ImagePlaceholder>
 
 ---
 
@@ -114,8 +110,7 @@ Two responsibilities emerge:
 - the architect identifies and communicates constraints clearly
 - governance verifies adherence consistently (manual review alone does not scale)
 
-**Image placeholder:**
-- `constraints-as-rules.png` — example constraints list + automated checks
+<ImagePlaceholder title="example constraints list + automated checks" chapter="26"></ImagePlaceholder>
 
 ---
 
@@ -137,9 +132,7 @@ A common failure mode:
 This misalignment is one reason DevOps emerged:
 - to reduce the gap between architectural intent and operational reality
 
-**Image placeholders:**
-- `architecture-vs-infrastructure-misalignment.png` — scalable design + non-scalable runtime
-- `elastic-scale-requirements.png` — autoscaling dependencies (metrics → scaling → routing)
+<ImagePlaceholder title="scalable design + non-scalable runtime" chapter="26"></ImagePlaceholder>
 
 ---
 
@@ -154,8 +147,7 @@ Examples of misalignment:
 
 Data topology is not an implementation detail; it sets the boundaries of what the architecture can achieve.
 
-**Image placeholder:**
-- `data-topology-architecture-fit.png` — architecture style vs DB topology compatibility
+<ImagePlaceholder title="architecture style vs DB topology compatibility" chapter="26"></ImagePlaceholder>
 
 ---
 
@@ -178,10 +170,7 @@ Different engineering practices also fit different domains and architectures. No
 A key translation at this intersection:
 - time-to-market → agility (ability to respond quickly to change)
 
-**Image placeholders:**
-- `evolutionary-architecture-feedback-loops.png` — iteration + governance + refactoring
-- `strangler-pattern.png` — old system gradually replaced by new slices
-- `feature-toggles-rollout.png` — gradual enablement across users
+<ImagePlaceholder title="iteration + governance + refactoring" chapter="26"></ImagePlaceholder>
 
 ---
 
@@ -198,8 +187,7 @@ Misalignment symptoms:
 A practical reading:
 - architecture and team boundaries should reflect each other enough to reduce coordination cost
 
-**Image placeholder:**
-- `team-topology-architecture-alignment.png` — teams mapped to bounded contexts/modules
+<ImagePlaceholder title="teams mapped to bounded contexts/modules" chapter="26"></ImagePlaceholder>
 
 ---
 
@@ -215,9 +203,7 @@ Integration is an intersection where architectural mistakes become expensive qui
 
 Integration can turn independent systems into one coupled system if not designed carefully.
 
-**Image placeholders:**
-- `integration-quantum-entanglement.png` — sync integration collapsing two quanta into one
-- `integration-contract-strategy.png` — contract versioning + compatibility envelope
+<ImagePlaceholder title="sync integration collapsing two quanta into one" chapter="26"></ImagePlaceholder>
 
 ---
 
@@ -233,8 +219,7 @@ This describes a path toward:
 - generic solutions that attempt to solve every future problem
 - increasing accidental complexity as “insurance”
 
-**Image placeholder:**
-- `architecture-residue-accumulation.png` — successive layers added to cover unknowns, leading to complexity criticality
+<ImagePlaceholder title="successive layers added to cover unknowns, leading to complexity criticality" chapter="26"></ImagePlaceholder>
 
 ---
 
@@ -248,22 +233,16 @@ Generative AI influences architecture indirectly through implementation:
 The intersection point is not “AI writes code,” but:
 - how AI affects consistency, maintainability, and compliance with architectural intent
 
-**Image placeholder:**
-- `ai-governance-intersection.png` — AI output + architecture constraints + automated checks
+<ImagePlaceholder title="AI output + architecture constraints + automated checks" chapter="26"></ImagePlaceholder>
 
 ---
 
 ## Frontend Context (React / Next.js Lens)
 
-These intersections show up in frontend systems as:
-- **implementation alignment**: feature module structure vs actual folder/import behavior
-- **infrastructure alignment**: SSR/ISR caching strategies vs hosting/CDN behavior
-- **data alignment**: API latency/consistency vs UI state expectations
-- **practices alignment**: toggles and incremental migrations in Next.js routes/components
-- **team alignment**: ownership of feature slices, BFF endpoints, and UI modules
-- **integration alignment**: preserving autonomy between UI and backend quanta (avoiding tight sync chains)
-
----
+<FrontendSection
+  lead="These intersections show up in frontend systems as:"
+  bullets="[{&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;**implementation alignment**: feature module structure vs actual folder/import behavior&quot;}, {&quot;icon&quot;: &quot;Cloud&quot;, &quot;text&quot;: &quot;**infrastructure alignment**: SSR/ISR caching strategies vs hosting/CDN behavior&quot;}, {&quot;icon&quot;: &quot;Gauge&quot;, &quot;text&quot;: &quot;**data alignment**: API latency/consistency vs UI state expectations&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;**practices alignment**: toggles and incremental migrations in Next.js routes/components&quot;}, {&quot;icon&quot;: &quot;BracketsCurly&quot;, &quot;text&quot;: &quot;**team alignment**: ownership of feature slices, BFF endpoints, and UI modules&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;**integration alignment**: preserving autonomy between UI and backend quanta (avoiding tight sync chains)&quot;}]"
+></FrontendSection>
 
 ## Closing Perspective
 Architecture succeeds when it aligns at its intersections. Many “architecture failures” are intersection failures:

@@ -16,8 +16,7 @@ Microkernel is a relatively simple architecture style built around two primary p
 
 It is a natural fit for product-based applications: packaged systems distributed for download and installation as a single deployable unit (often monolithic in deployment).
 
-**Image placeholder:**
-- `microkernel-core-and-plugins.png` — core system with surrounding plugin components
+<ImagePlaceholder title="core system with surrounding plugin components" chapter="13"></ImagePlaceholder>
 
 ---
 
@@ -30,10 +29,7 @@ A practical definition is the **happy path**:
 
 Microkernel moves complexity out of the core by relocating conditional branches and specialized logic into plugins. One way to view it is that the style reduces the core’s cyclomatic complexity by “externalizing” variant behavior.
 
-**Image placeholders:**
-- `core-happy-path-extension-points.png` — stable core path with plugin extension points
-- `layered-core-vs-modular-core.png` — layered (technical partition) vs modular core (domain partition) contrast
-- `ui-deployment-variants.png` — embedded UI (single deployment) vs separated UI (multiple deployments)
+<ImagePlaceholder title="stable core path with plugin extension points" chapter="13"></ImagePlaceholder>
 
 ---
 
@@ -46,9 +42,7 @@ Plugins are standalone components that contain:
 
 The design intent is that plugins have minimal dependencies between them. When plugins depend on each other, dependency resolution often becomes a responsibility of the core (directly or indirectly), reducing isolation.
 
-**Image placeholders:**
-- `plugin-independence.png` — plugins communicate only with core
-- `plugin-dependency-conflicts.png` — transitive conflicts forcing core to mediate versions
+<ImagePlaceholder title="plugins communicate only with core" chapter="13"></ImagePlaceholder>
 
 ---
 
@@ -65,10 +59,7 @@ Microkernel supports multiple plugin implementation strategies:
 3) **Remote plugins (service-based)**  
    Plugins invoked via REST or messaging, potentially deployed independently.
 
-**Image placeholders:**
-- `plugin-shared-library.png` — core loading plugin binaries/libraries
-- `plugin-package-namespace.png` — plugins as packages/namespaces in repo
-- `remote-plugin-rest.png` — core invoking plugin services via REST/messaging
+<ImagePlaceholder title="core loading plugin binaries/libraries" chapter="13"></ImagePlaceholder>
 
 ---
 
@@ -100,8 +91,7 @@ One way to distinguish “plugin-supporting systems” from “microkernel syste
 - if core behavior changes frequently, plugins are less effective as isolation
 - if core stabilizes and plugins absorb change, the microkernel philosophy holds
 
-**Image placeholder:**
-- `microkernel-ality-spectrum.png` — plugin support → partial microkernel → strong microkernel (core stability increasing)
+<ImagePlaceholder title="plugin support → partial microkernel → strong microkernel (core stability increasing)" chapter="13"></ImagePlaceholder>
 
 ---
 
@@ -116,8 +106,7 @@ The registry may be:
 
 The registry influences extensibility and operational flexibility.
 
-**Image placeholder:**
-- `plugin-registry.png` — registry mediating core-to-plugin binding
+<ImagePlaceholder title="registry mediating core-to-plugin binding" chapter="13"></ImagePlaceholder>
 
 ---
 
@@ -131,8 +120,7 @@ In such cases:
 
 This keeps responsibility scoped: the core orchestrates and presents; plugins own specialized meaning.
 
-**Image placeholder:**
-- `third-party-plugin-contracts.png` — plugin-defined contract with core acting as presenter/router
+<ImagePlaceholder title="plugin-defined contract with core acting as presenter/router" chapter="13"></ImagePlaceholder>
 
 ---
 
@@ -145,9 +133,7 @@ A typical boundary assumption:
 
 However, plugin-owned data stores can exist when plugin autonomy is required.
 
-**Image placeholders:**
-- `microkernel-shared-db.png` — shared DB with core boundary
-- `plugin-owned-datastore.png` — plugin owning its own data store
+<ImagePlaceholder title="shared DB with core boundary" chapter="13"></ImagePlaceholder>
 
 ---
 
@@ -177,8 +163,7 @@ Common governance checks:
 - **contract tests** (especially when plugins evolve at different rates/versions)
 - structural verification (dependency rules, plugin isolation)
 
-**Image placeholder:**
-- `microkernel-governance.png` — churn checks + contract tests + dependency enforcement
+<ImagePlaceholder title="churn checks + contract tests + dependency enforcement" chapter="13"></ImagePlaceholder>
 
 ---
 
@@ -195,8 +180,7 @@ Microkernel maps well to several team arrangements:
 - **Platform teams**  
   Operational support resembles other monolithic deployments, with added attention to plugin packaging/versioning.
 
-**Image placeholder:**
-- `microkernel-team-mapping.png` — core vs plugins ownership mapping
+<ImagePlaceholder title="core vs plugins ownership mapping" chapter="13"></ImagePlaceholder>
 
 ---
 
@@ -213,8 +197,7 @@ Typical risks:
 - remote plugin invocation adds distributed-system constraints
 - operational characteristics (elasticity, fault tolerance) are not inherent unless explicitly engineered
 
-**Image placeholder:**
-- `microkernel-characteristics-radar.png` — qualitative ratings across characteristics
+<StyleRatings style-key="MicroKernel" />
 
 ---
 
@@ -231,22 +214,16 @@ Microkernel can be used to isolate variability:
 
 This allows rule evolution without destabilizing the core system’s processing path.
 
-**Image placeholder:**
-- `rules-engine-microkernel.png` — core engine + rule/plugin modules
+<ImagePlaceholder title="core engine + rule/plugin modules" chapter="13"></ImagePlaceholder>
 
 ---
 
 ## Frontend Context (React / Next.js Lens)
 
-Microkernel thinking appears in frontend systems through:
-- white-label applications (customer-specific modules)
-- plugin marketplaces / extension ecosystems
-- design-system core + app-specific extensions
-- runtime-configurable feature packs (when genuinely isolated)
-
-A frequent frontend failure mode is accidental plugin-to-plugin coupling via shared “utilities” that become domain logic hubs. The microkernel approach pushes toward explicit extension surfaces instead of implicit imports.
-
----
+<FrontendSection
+  lead="Microkernel thinking appears in frontend systems through:"
+  bullets="[{&quot;icon&quot;: &quot;Flask&quot;, &quot;text&quot;: &quot;white-label applications (customer-specific modules)&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;plugin marketplaces / extension ecosystems&quot;}, {&quot;icon&quot;: &quot;Flask&quot;, &quot;text&quot;: &quot;design-system core + app-specific extensions&quot;}, {&quot;icon&quot;: &quot;Timer&quot;, &quot;text&quot;: &quot;runtime-configurable feature packs (when genuinely isolated)&quot;}, {&quot;icon&quot;: &quot;ChartLine&quot;, &quot;text&quot;: &quot;A frequent frontend failure mode is accidental plugin-to-plugin coupling via shared “utilities” that become domain logic hubs. The microkernel approach pushes toward explicit extension surfaces instead of implicit imports.&quot;}]"
+></FrontendSection>
 
 ## Closing Perspective
 Microkernel is a common architecture style because customization is a common domain problem.

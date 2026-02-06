@@ -107,8 +107,7 @@ This pattern is frequently used to:
 - reduce coupling to persistence and frameworks
 - keep domain logic portable and testable
 
-**Image placeholder:**
-- `hexagonal-ports-adapters.png` — domain core + ports + adapters (DB as an adapter)
+<ImagePlaceholder title="domain core + ports + adapters (DB as an adapter)" chapter="20"></ImagePlaceholder>
 
 ---
 
@@ -133,9 +132,7 @@ There are trade-offs between sidecar-only usage and full service mesh adoption:
 - control plane overhead vs standardized capabilities
 - observability gains vs runtime footprint
 
-**Image placeholders:**
-- `sidecar-pattern.png` — service + sidecar handling cross-cutting concerns
-- `service-mesh.png` — mesh control plane + service sidecars
+<ImagePlaceholder title="service + sidecar handling cross-cutting concerns" chapter="20"></ImagePlaceholder>
 
 ---
 
@@ -164,9 +161,7 @@ A practical benefit of recognizing this pattern:
 It also reinforces a core idea from earlier chapters:
 - trade-off analysis is not a one-time task; it keeps recurring as systems evolve.
 
-**Image placeholders:**
-- `orchestration-vs-choreography.png` — central coordinator vs distributed reactions
-- `workflow-control-tradeoff.png` — control/error handling vs scalability/decoupling
+<ImagePlaceholder title="central coordinator vs distributed reactions" chapter="20"></ImagePlaceholder>
 
 ---
 
@@ -190,8 +185,7 @@ The trade-offs include:
 - eventual consistency between write and read models
 - increased operational and modeling complexity
 
-**Image placeholder:**
-- `cqrs-write-read-models.png` — command side → write store → async projection → read store
+<ImagePlaceholder title="command side → write store → async projection → read store" chapter="20"></ImagePlaceholder>
 
 ---
 
@@ -223,22 +217,16 @@ Two broker patterns appear as infrastructure topology choices:
 This parallels the earlier theme:
 - fewer shared things tends to reduce coupling but increase operational overhead
 
-**Image placeholders:**
-- `single-broker.png` — one broker serving all domains
-- `domain-brokers.png` — brokers partitioned by domain boundaries
+<ImagePlaceholder title="one broker serving all domains" chapter="20"></ImagePlaceholder>
 
 ---
 
 ## Frontend Context (React / Next.js Lens)
 
-Patterns are visible in frontend ecosystems as well:
-
-- **Ports/adapters** appear as domain-core vs API client boundaries
-- **CQRS** shows up when UI reads from cached/denormalized views while writes go through stricter command APIs
-- **Orchestration vs choreography** appears in BFFs and UI aggregators (orchestrators) vs event-driven UI updates (choreography)
-- **Sidecar/mesh** affects frontend indirectly through reliability behavior (retries, timeouts, mTLS, routing) of backend APIs that the UI depends on
-
----
+<FrontendSection
+  lead="Patterns are visible in frontend ecosystems as well:"
+  bullets="[{&quot;icon&quot;: &quot;BracketsCurly&quot;, &quot;text&quot;: &quot;**Ports/adapters** appear as domain-core vs API client boundaries&quot;}, {&quot;icon&quot;: &quot;BracketsCurly&quot;, &quot;text&quot;: &quot;**CQRS** shows up when UI reads from cached/denormalized views while writes go through stricter command APIs&quot;}, {&quot;icon&quot;: &quot;Broadcast&quot;, &quot;text&quot;: &quot;**Orchestration vs choreography** appears in BFFs and UI aggregators (orchestrators) vs event-driven UI updates (choreography)&quot;}, {&quot;icon&quot;: &quot;BracketsCurly&quot;, &quot;text&quot;: &quot;**Sidecar/mesh** affects frontend indirectly through reliability behavior (retries, timeouts, mTLS, routing) of backend APIs that the UI depends on&quot;}]"
+></FrontendSection>
 
 ## Closing Perspective
 Architectural patterns are not rules. They are reusable solution shapes with known trade-offs.

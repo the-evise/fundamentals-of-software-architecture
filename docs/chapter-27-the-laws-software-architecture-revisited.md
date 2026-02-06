@@ -37,8 +37,7 @@ A non-exhaustive list of contextual trade-off drivers from your notes:
 
 Architecture work is determining which of these factors are load-bearing for the current decision.
 
-**Image placeholder:**
-- `depends-on-what-decision-factors.png` — decision at center with influencing factors
+<ImagePlaceholder title="decision at center with influencing factors" chapter="27"></ImagePlaceholder>
 
 ---
 
@@ -56,8 +55,7 @@ This reframes reuse as context-dependent:
 - reuse can reduce effort
 - but it can also amplify volatility and coupling cost
 
-**Image placeholder:**
-- `domain-volatility-vs-reuse-risk.png` — volatile domain concepts → high reuse coupling cost
+<ImagePlaceholder title="volatile domain concepts → high reuse coupling cost" chapter="27"></ImagePlaceholder>
 
 ### Corollary 2: You Can’t Do Trade-off Analysis Once
 Trade-offs evolve:
@@ -68,8 +66,7 @@ Trade-offs evolve:
 
 This is why architecture isn’t a one-time selection of “the right style.” It is continuous evaluation of whether the current structure still fits the constraints.
 
-**Image placeholder:**
-- `tradeoff-analysis-is-continuous.png` — iteration loop revisiting trade-offs over time
+<ImagePlaceholder title="iteration loop revisiting trade-offs over time" chapter="27"></ImagePlaceholder>
 
 ---
 
@@ -86,14 +83,15 @@ This connects directly to:
 
 Generic trade-off lists aren’t very useful. Trade-off analysis becomes valuable only when applied to a specific context, with explicit criteria and constraints.
 
-**Image placeholder:**
-- `why-over-how-communication.png` — diagram shows structure; ADR captures rationale
+<ImagePlaceholder title="diagram shows structure; ADR captures rationale" chapter="27"></ImagePlaceholder>
 
 ---
 
 ## Third Law: Most Decisions Live on a Spectrum
 
-> “Most architecture decisions aren’t binary but rather exist on a spectrum between extremes.”
+<QuoteBlock>
+“Most architecture decisions aren’t binary but rather exist on a spectrum between extremes.”
+</QuoteBlock>
 
 This reframes many debates:
 - not “monolith vs microservices” but “how many deployment units and where are the boundaries”
@@ -102,8 +100,7 @@ This reframes many debates:
 
 Decision criteria are rarely clean yes/no gates; they are messy, multi-variable gradients.
 
-**Image placeholder:**
-- `architecture-decisions-spectrum.png` — extremes with a spectrum of intermediate options
+<ImagePlaceholder title="extremes with a spectrum of intermediate options" chapter="27"></ImagePlaceholder>
 
 ---
 

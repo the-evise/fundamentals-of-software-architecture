@@ -34,8 +34,7 @@ Effective architects read between the lines:
 - translate it into architectural characteristics
 - negotiate around cost, risk, and feasibility
 
-**Image placeholder:**
-- `buzzword-decoder.png` — phrase → underlying concern → characteristic
+<ImagePlaceholder title="phrase → underlying concern → characteristic" chapter="25"></ImagePlaceholder>
 
 ---
 
@@ -102,8 +101,7 @@ Language shifts matter:
 - “What you need to do is…” → closes collaboration
 - “Have you considered…” → invites collaboration and keeps control with the team
 
-**Image placeholder:**
-- `language-control-spectrum.png` — command → suggestion → inquiry
+<ImagePlaceholder title="command → suggestion → inquiry" chapter="25"></ImagePlaceholder>
 
 ---
 
@@ -148,8 +146,7 @@ Clear, concise communication is not a soft skill; it is a technical multiplier:
 - less rework
 - less political energy wasted
 
-**Image placeholder:**
-- `4cs-architecture-leadership.png` — Communicate / Collaboration / Clear / Concise
+<ImagePlaceholder title="Communicate / Collaboration / Clear / Concise" chapter="25"></ImagePlaceholder>
 
 ---
 
@@ -163,8 +160,7 @@ This balance earns respect because it demonstrates:
 - long-term thinking without fantasy architecture
 - near-term delivery without mortgaging the future excessively
 
-**Image placeholder:**
-- `pragmatic-vs-visionary-balance.png` — two-axis balance diagram
+<ImagePlaceholder title="two-axis balance diagram" chapter="25"></ImagePlaceholder>
 
 ---
 
@@ -213,9 +209,7 @@ A useful filter:
 
 Flow is a productivity state where attention is fully engaged and creativity is high. Frequent interruptions degrade flow, which degrades throughput. Architects who protect flow increase team effectiveness.
 
-**Image placeholder:**
-- `meeting-cost-vs-value.png` — meeting time vs throughput impact
-- `flow-interruption.png` — context switching effect
+<ImagePlaceholder title="meeting time vs throughput impact" chapter="25"></ImagePlaceholder>
 
 ---
 
@@ -242,19 +236,10 @@ This supports negotiation because negotiation quality depends on trust and acces
 
 ## Frontend Context (React / Next.js Lens)
 
-Negotiation frequently shows up in frontend-heavy systems around:
-- performance budgets vs feature scope
-- SSR/ISR/CSR choices vs delivery speed
-- API contract stability vs iteration cadence
-- microfrontends vs single UI ownership
-- observability scope (client telemetry) vs privacy/security constraints
-
-The most effective negotiation framing tends to be:
-- translate UI pain into measurable costs (conversion, latency, defect rate)
-- tie architectural choices to user outcomes and delivery throughput
-- present alternatives with explicit trade-offs
-
----
+<FrontendSection
+  lead="Negotiation frequently shows up in frontend-heavy systems around:"
+  bullets="[{&quot;icon&quot;: &quot;Gauge&quot;, &quot;text&quot;: &quot;performance budgets vs feature scope&quot;}, {&quot;icon&quot;: &quot;Gauge&quot;, &quot;text&quot;: &quot;SSR/ISR/CSR choices vs delivery speed&quot;}, {&quot;icon&quot;: &quot;BracketsCurly&quot;, &quot;text&quot;: &quot;API contract stability vs iteration cadence&quot;}, {&quot;icon&quot;: &quot;UsersThree&quot;, &quot;text&quot;: &quot;microfrontends vs single UI ownership&quot;}, {&quot;icon&quot;: &quot;ShieldCheck&quot;, &quot;text&quot;: &quot;observability scope (client telemetry) vs privacy/security constraints&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;The most effective negotiation framing tends to be:&quot;}, {&quot;icon&quot;: &quot;Gauge&quot;, &quot;text&quot;: &quot;translate UI pain into measurable costs (conversion, latency, defect rate)&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;tie architectural choices to user outcomes and delivery throughput&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;present alternatives with explicit trade-offs&quot;}]"
+></FrontendSection>
 
 ## Extra Resources
 

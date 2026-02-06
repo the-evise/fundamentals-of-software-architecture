@@ -66,7 +66,9 @@ These factors influence what is feasible to build and sustain.
 
 Isomorphism means a mapping that preserves relations among elements (“equal form/shape”). In architecture, this often shows up as:
 
-> Some domains naturally match the topology of certain architecture styles.
+<QuoteBlock>
+Some domains naturally match the topology of certain architecture styles.
+</QuoteBlock>
 
 Examples of isomorphism-like alignment:
 - step-by-step deterministic workflows align well with pipeline structures
@@ -79,8 +81,7 @@ Conversely, highly scalable systems struggle with large monolithic designs when:
 
 This is not a claim that monoliths cannot scale; it highlights that coupling and shared state make scaling more difficult structurally.
 
-**Image placeholder:**
-- `domain-architecture-isomorphism.png` — domain elements mapped to architecture topology shapes
+<ImagePlaceholder title="domain elements mapped to architecture topology shapes" chapter="19"></ImagePlaceholder>
 
 ---
 
@@ -115,10 +116,7 @@ A pragmatic stance often appears:
 
 This reflects the fact that async buys flexibility, but also buys complexity.
 
-**Image placeholders:**
-- `monolith-vs-distributed.png` — topology comparison
-- `data-topology-options.png` — shared DB vs domain DB vs dedicated DB
-- `sync-vs-async-decision.png` — runtime coupling vs decoupling trade-off
+<ImagePlaceholder title="topology comparison" chapter="19"></ImagePlaceholder>
 
 ---
 
@@ -137,8 +135,7 @@ A practical forward-looking tactic:
 
 Customization, if required, is not inherent to this style—so it often becomes part of domain design (implemented through domain modules, configuration, or feature modeling).
 
-**Image placeholder:**
-- `modular-monolith-domain-alignment.png` — domain modules aligned with DB assets (same DB, separated schemas)
+<ImagePlaceholder title="domain modules aligned with DB assets (same DB, separated schemas)" chapter="19"></ImagePlaceholder>
 
 ### Microkernel Lens
 Microkernel handles variability structurally through plugins.
@@ -148,8 +145,7 @@ A common frontend-adjacent variant:
 - BFF adapters translate that into device-appropriate formats (web/mobile)
 - plugins isolate customization, experiments, or client-specific behavior
 
-**Image placeholder:**
-- `microkernel-bff-adapters.png` — core API + device adapters + plugin extensions
+<ImagePlaceholder title="core API + device adapters + plugin extensions" chapter="19"></ImagePlaceholder>
 
 ---
 
@@ -170,18 +166,10 @@ The output is not “the best architecture,” but a least-worst set of trade-of
 
 ## Frontend Context (React / Next.js Lens)
 
-Frontend architecture style selection often shows up through:
-- API shape and volatility (contracts, versioning, aggregation)
-- UI composition strategy (single UI vs microfrontends)
-- consistency semantics (immediate vs eventual, polling vs streaming)
-- operational requirements (edge caching, latency budgets, availability targets)
-
-In frontend work, many “architecture” trade-offs are experienced as:
-- how often API changes ripple into the UI
-- how much orchestration lives in a BFF vs inside services
-- whether user journeys require synchronous end-to-end completion
-
----
+<FrontendSection
+  lead="Frontend architecture style selection often shows up through:"
+  bullets="[{&quot;icon&quot;: &quot;BracketsCurly&quot;, &quot;text&quot;: &quot;API shape and volatility (contracts, versioning, aggregation)&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;UI composition strategy (single UI vs microfrontends)&quot;}, {&quot;icon&quot;: &quot;Broadcast&quot;, &quot;text&quot;: &quot;consistency semantics (immediate vs eventual, polling vs streaming)&quot;}, {&quot;icon&quot;: &quot;ShieldCheck&quot;, &quot;text&quot;: &quot;operational requirements (edge caching, latency budgets, availability targets)&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;In frontend work, many “architecture” trade-offs are experienced as:&quot;}, {&quot;icon&quot;: &quot;BracketsCurly&quot;, &quot;text&quot;: &quot;how often API changes ripple into the UI&quot;}, {&quot;icon&quot;: &quot;FlowArrow&quot;, &quot;text&quot;: &quot;how much orchestration lives in a BFF vs inside services&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;whether user journeys require synchronous end-to-end completion&quot;}]"
+></FrontendSection>
 
 ## Closing Perspective
 Choosing an architecture style is not about matching a domain to a fashionable topology. It is about matching a domain—and its constraints—to the structural capabilities required for success.

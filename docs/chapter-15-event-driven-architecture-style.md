@@ -14,9 +14,7 @@ Event-driven architecture is composed of decoupled event-processing components t
 A request-based model asks the system to do something.  
 An event-based model announces that something has happened, and processors react.
 
-**Image placeholders:**
-- `request-based-model.png` — request → processing → response
-- `event-based-model.png` — event broadcast → multiple processors react
+<ImagePlaceholder title="request → processing → response" chapter="15"></ImagePlaceholder>
 
 ---
 
@@ -31,8 +29,7 @@ A common baseline topology includes:
 
 Once an event processor hands off an event, it is no longer involved with that specific event and is free to react to other events.
 
-**Image placeholder:**
-- `eda-basic-topology.png` — initiator → broker → processors → derived events
+<ImagePlaceholder title="initiator → broker → processors → derived events" chapter="15"></ImagePlaceholder>
 
 ---
 
@@ -42,8 +39,7 @@ A **poison event** occurs when derived events create a continuous triggering loo
 
 This is a practical risk in EDA because parallelism and decoupling make it easy to accidentally form cycles in event flows.
 
-**Image placeholder:**
-- `poison-event-loop.png` — derived-event loop between processors
+<ImagePlaceholder title="derived-event loop between processors" chapter="15"></ImagePlaceholder>
 
 ---
 
@@ -71,8 +67,7 @@ Illustrative examples:
 
 The architectural relevance: events favor semantic decoupling (broadcast without knowing consumers). Messages favor directed intent and stronger coupling.
 
-**Image placeholder:**
-- `events-vs-messages.png` — pub/sub topic vs point-to-point queue
+<ImagePlaceholder title="pub/sub topic vs point-to-point queue" chapter="15"></ImagePlaceholder>
 
 ---
 
@@ -90,9 +85,7 @@ Granularity matters at two levels:
 
 An **extensive derived event** is one that currently has no consumers but still provides an extensibility hook.
 
-**Image placeholders:**
-- `swarm-of-gnats.png` — one action causing a storm of micro-events
-- `extensive-derived-event.png` — event exists even without consumers
+<ImagePlaceholder title="one action causing a storm of micro-events" chapter="15"></ImagePlaceholder>
 
 ---
 
@@ -110,8 +103,7 @@ This differs from **performance**:
 
 Async can improve perceived responsiveness even when total processing time remains the same.
 
-**Image placeholder:**
-- `sync-vs-async.png` — blocking request chain vs async handoff
+<ImagePlaceholder title="blocking request chain vs async handoff" chapter="15"></ImagePlaceholder>
 
 ---
 
@@ -124,9 +116,7 @@ Synchronous communication between architectural quanta can cause **dynamic quant
 
 Replacing sync calls with async communication can detangle quanta by removing the dynamic dependency.
 
-**Image placeholders:**
-- `sync-entangles-quanta.png` — two quanta become one due to sync call
-- `async-detangles-quanta.png` — async boundary restores independence
+<ImagePlaceholder title="two quanta become one due to sync call" chapter="15"></ImagePlaceholder>
 
 ---
 
@@ -140,8 +130,7 @@ EDA allows broadcasting events without knowing:
 This is a form of semantic decoupling:
 - processors depend on event meaning, not specific peer services
 
-**Image placeholder:**
-- `semantic-decoupling-broadcast.png` — publisher emits event to unknown consumers
+<ImagePlaceholder title="publisher emits event to unknown consumers" chapter="15"></ImagePlaceholder>
 
 ---
 
@@ -162,8 +151,7 @@ Event contains all information needed for processing downstream.
 - harder contract management/versioning
 - harder data consistency when multiple systems store similar data
 
-**Image placeholder:**
-- `data-based-payload.png` — rich payload enabling downstream processing without DB calls
+<ImagePlaceholder title="rich payload enabling downstream processing without DB calls" chapter="15"></ImagePlaceholder>
 
 ### Key-Based Payload
 Event contains only a key/identifier; consumers query data stores for context.
@@ -179,8 +167,7 @@ Event contains only a key/identifier; consumers query data stores for context.
 - lower performance/scalability (if DB is heavily shared)
 - risk of “anemic events” (not enough context for meaningful processing)
 
-**Image placeholder:**
-- `key-based-payload.png` — minimal payload + downstream DB lookups
+<ImagePlaceholder title="minimal payload + downstream DB lookups" chapter="15"></ImagePlaceholder>
 
 **Table placeholder:**
 - `payload-tradeoffs-table.png` — Data-based vs Key-based across criteria (performance, contract mgmt, bandwidth, DB access, fragility)
@@ -219,8 +206,7 @@ Costs:
 - harder error handling and recoverability
 - harder “completion” determination (when is an initiating event truly done?)
 
-**Image placeholder:**
-- `broker-topology.png` — event chains without central control
+<ImagePlaceholder title="event chains without central control" chapter="15"></ImagePlaceholder>
 
 ### 2) Mediator Topology (Orchestration)
 - an event mediator manages/control workflow
@@ -241,8 +227,7 @@ The trade-off often reduces to:
   vs
 - performance + scalability
 
-**Image placeholder:**
-- `mediator-topology.png` — mediator orchestrating processors via command messages
+<ImagePlaceholder title="mediator orchestrating processors via command messages" chapter="15"></ImagePlaceholder>
 
 ---
 
@@ -265,9 +250,7 @@ A workflow-style error handling pattern often appears:
 - repaired event is resubmitted to original queue
 - unrepairable events go to a dashboard for manual intervention
 
-**Image placeholders:**
-- `preventing-data-loss.png` — persistent queue + sync send + client ack
-- `workflow-event-pattern.png` — bogus event → repair → resubmit or manual queue
+<ImagePlaceholder title="persistent queue + sync send + client ack" chapter="15"></ImagePlaceholder>
 
 ---
 
@@ -281,9 +264,7 @@ Two common implementations:
 
 Temporary queues are simpler conceptually but can burden brokers at high volume and concurrency.
 
-**Image placeholders:**
-- `request-reply-correlation-id.png` — correlation ID flow
-- `request-reply-temp-queue.png` — temp queue per request
+<ImagePlaceholder title="correlation ID flow" chapter="15"></ImagePlaceholder>
 
 ---
 
@@ -332,8 +313,7 @@ Costs:
 - expensive operationally and cognitively
 - strongest pressure toward eventual consistency and distributed data semantics
 
-**Image placeholder:**
-- `eda-db-topologies.png` — monolithic vs domain vs dedicated DB shapes
+<ImagePlaceholder title="monolithic vs domain vs dedicated DB shapes" chapter="15"></ImagePlaceholder>
 
 ---
 
@@ -351,10 +331,7 @@ Common governance concerns:
 
 EDA becomes harder to test and debug as event trees grow; hundreds or thousands of scenarios are plausible.
 
-**Image placeholders:**
-- `eda-observability-mesh.png` — logs/traces/metrics as governance surface
-- `stamp-coupling-usage-tracking.png` — unused fields detected across consumers
-- `sync-call-tracker.png` — sync dependencies detected via tracing/logs
+<ImagePlaceholder title="logs/traces/metrics as governance surface" chapter="15"></ImagePlaceholder>
 
 ---
 
@@ -398,8 +375,7 @@ Common costs:
 - difficult recoverability (depends on workflow/error strategy)
 - hard “done-ness” determination (when is processing complete?)
 
-**Image placeholder:**
-- `eda-characteristics-radar.png` — qualitative ratings across characteristics
+<StyleRatings style-key="Event-Driven" />
 
 ---
 
@@ -424,19 +400,10 @@ Trade-offs commonly include:
 
 ## Frontend Context (React / Next.js Lens)
 
-Frontend teams experience EDA indirectly:
-- via backend event workflows that create eventual consistency in UI
-- via “accepted, processing…” UX patterns
-- via websockets/SSE updates, notifications, streaming states
-
-EDA makes “instant final state” less reliable:
-- UIs often need intermediate states and reconciliation
-- observability becomes a product concern, not just an ops concern
-- API contracts may represent “eventual truth” rather than immediate truth
-
-EDA is powerful, but it pushes complexity into workflow reasoning, operational visibility, and contract evolution.
-
----
+<FrontendSection
+  lead="Frontend teams experience EDA indirectly:"
+  bullets="[{&quot;icon&quot;: &quot;Broadcast&quot;, &quot;text&quot;: &quot;via backend event workflows that create eventual consistency in UI&quot;}, {&quot;icon&quot;: &quot;Gauge&quot;, &quot;text&quot;: &quot;via “accepted, processing…” UX patterns&quot;}, {&quot;icon&quot;: &quot;Broadcast&quot;, &quot;text&quot;: &quot;via websockets/SSE updates, notifications, streaming states&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;EDA makes “instant final state” less reliable:&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;UIs often need intermediate states and reconciliation&quot;}, {&quot;icon&quot;: &quot;ChartLine&quot;, &quot;text&quot;: &quot;observability becomes a product concern, not just an ops concern&quot;}, {&quot;icon&quot;: &quot;BracketsCurly&quot;, &quot;text&quot;: &quot;API contracts may represent “eventual truth” rather than immediate truth&quot;}, {&quot;icon&quot;: &quot;BracketsCurly&quot;, &quot;text&quot;: &quot;EDA is powerful, but it pushes complexity into workflow reasoning, operational visibility, and contract evolution.&quot;}]"
+></FrontendSection>
 
 ## Closing Perspective
 Event-driven architecture is one of the most powerful styles for complex, dynamic systems—because it embraces decoupling, parallelism, and asynchronous processing.

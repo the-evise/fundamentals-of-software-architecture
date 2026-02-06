@@ -15,8 +15,7 @@ A modular monolith is:
 
 Modules represent domain areas (and sometimes subdomains), grouping related functionality together.
 
-**Image placeholder:**
-- `modular-monolith-overview.png` — single deployment unit containing multiple domain modules
+<ImagePlaceholder title="single deployment unit containing multiple domain modules" chapter="11"></ImagePlaceholder>
 
 ---
 
@@ -55,8 +54,7 @@ When this happens at scale, it resembles “DLL hell” as module dependencies m
 
 A high volume of intermodule communication can also indicate mis-modeled domains: if modules are not meaningfully independent, domain boundaries may have been poorly defined.
 
-**Image placeholder:**
-- `boundary-erosion.png` — clean module boundaries gradually dissolving into a dependency mesh
+<ImagePlaceholder title="clean module boundaries gradually dissolving into a dependency mesh" chapter="11"></ImagePlaceholder>
 
 ---
 
@@ -70,8 +68,7 @@ This does not eliminate all coupling, but it can:
 - preserve module independence
 - centralize integration logic
 
-**Image placeholder:**
-- `mediator-between-modules.png` — module A → mediator → module B (instead of direct references)
+<ImagePlaceholder title="module A → mediator → module B (instead of direct references)" chapter="11"></ImagePlaceholder>
 
 ---
 
@@ -85,8 +82,7 @@ However, some modular monoliths keep domain-specific contextual data separated:
 
 The key point is not physical separation, but **bounded ownership** of data and behavior.
 
-**Image placeholder:**
-- `data-topology-modular-monolith.png` — shared DB with domain-owned schemas (and optional separate stores)
+<ImagePlaceholder title="shared DB with domain-owned schemas (and optional separate stores)" chapter="11"></ImagePlaceholder>
 
 ---
 
@@ -126,8 +122,7 @@ This style is well-suited to automated structural checks because everything exis
 - dependency graph checks
 - cyclic dependency detection
 
-**Image placeholder:**
-- `modular-monolith-governance.png` — boundary rules + dependency checks + violations
+<ImagePlaceholder title="boundary rules + dependency checks + violations" chapter="11"></ImagePlaceholder>
 
 ---
 
@@ -143,8 +138,7 @@ Common mappings:
 - **Complicated subsystem teams**  
   Modules map naturally to complicated domain processing, reducing cognitive load for other teams.
 
-**Image placeholder:**
-- `team-alignment-by-domain.png` — teams mapped to domain modules
+<ImagePlaceholder title="teams mapped to domain modules" chapter="11"></ImagePlaceholder>
 
 ---
 
@@ -164,10 +158,8 @@ It scores poorly for high-demand operational characteristics such as:
 
 Not because these are impossible, but because the architecture style does not optimize for them.
 
-**Image placeholder:**
-- `modular-monolith-characteristics-radar.png` — qualitative ratings across characteristics
+<StyleRatings style-key="Modular Monolith" />
 
----
 
 ## When It Fits (and When It Doesn’t)
 
@@ -185,19 +177,10 @@ It tends to be a poor fit when:
 
 ## Frontend Context (React / Next.js Lens)
 
-In frontend systems, a modular monolith maps naturally to:
-- domain-based feature modules
-- bounded ownership of routes, UI, state, and API adapters per domain
-- a shared design system that remains infrastructure-like (not domain-owned)
-
-The same risks apply:
-- over-sharing utilities until boundaries disappear
-- allowing feature modules to import each other directly
-- coupling state management across domains
-
-A modular monolith frontend can remain stable if module boundaries are treated as architectural constraints rather than folder conventions.
-
----
+<FrontendSection
+  lead="In frontend systems, a modular monolith maps naturally to:"
+  bullets="[{&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;domain-based feature modules&quot;}, {&quot;icon&quot;: &quot;BracketsCurly&quot;, &quot;text&quot;: &quot;bounded ownership of routes, UI, state, and API adapters per domain&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;a shared design system that remains infrastructure-like (not domain-owned)&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;The same risks apply:&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;over-sharing utilities until boundaries disappear&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;allowing feature modules to import each other directly&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;coupling state management across domains&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;A modular monolith frontend can remain stable if module boundaries are treated as architectural constraints rather than folder conventions.&quot;}]"
+></FrontendSection>
 
 ## Closing Perspective
 A modular monolith is not “microservices without microservices.” It is a deliberate architecture style with a clear trade: lower operational complexity in exchange for shared deployment and increased need for boundary governance.

@@ -33,7 +33,9 @@ A decision can be “architectural” even when it looks like a technology choic
 
 Architects rarely have perfect information. One pragmatic principle is:
 
-> Wait until the last responsible moment to make an important decision.
+<QuoteBlock>
+Wait until the last responsible moment to make an important decision.
+</QuoteBlock>
 
 This is the point where:
 - there is enough information to justify and validate the choice
@@ -41,8 +43,7 @@ This is the point where:
 
 Deferring has a cost. When the cost of deferring exceeds the risk of deciding, it is time to decide.
 
-**Image placeholder:**
-- `last-responsible-moment.png` — cost of delay vs risk of early decision curve intersection
+<ImagePlaceholder title="cost of delay vs risk of early decision curve intersection" chapter="21"></ImagePlaceholder>
 
 ---
 
@@ -59,8 +60,7 @@ A decision is avoided or delayed out of fear of being wrong. This can create:
 - continual collaboration with dev teams to reduce blind spots
 - feasibility checks (POCs where needed) to avoid “paper architecture”
 
-**Image placeholder:**
-- `analysis-paralysis-loop.png` — defer → uncertainty remains → defer again
+<ImagePlaceholder title="defer → uncertainty remains → defer again" chapter="21"></ImagePlaceholder>
 
 ---
 
@@ -88,8 +88,7 @@ A more robust communication model:
 - the decision and details live in a single system of record
 - recipients are only stakeholders who actually need to know
 
-**Image placeholder:**
-- `email-driven-architecture.png` — decision scattered across threads vs single record + link
+<ImagePlaceholder title="decision scattered across threads vs single record + link" chapter="21"></ImagePlaceholder>
 
 ---
 
@@ -150,8 +149,7 @@ Two additional sections are often useful:
 - metadata: author, approval date, approver(s)
 - superseded date, last modified, etc.
 
-**Image placeholder:**
-- `adr-template.png` — ADR layout with sections highlighted
+<ImagePlaceholder title="ADR layout with sections highlighted" chapter="21"></ImagePlaceholder>
 
 ---
 
@@ -185,26 +183,16 @@ A practical best-case use of generative AI:
 But the selection and accountability remain human:
 - AI may have knowledge, but lacks the “wisdom” of contextual judgment and responsibility for consequences.
 
-**Image placeholder:**
-- `ai-tradeoff-assistant.png` — AI suggesting trade-off checklist; architect deciding with context
+<ImagePlaceholder title="AI suggesting trade-off checklist; architect deciding with context" chapter="21"></ImagePlaceholder>
 
 ---
 
 ## Frontend Context (React / Next.js Lens)
 
-In frontend-heavy systems, architectural decisions frequently show up as:
-- API consumption patterns (BFF, gateway, orchestration location)
-- contract strategy (GraphQL vs REST, field selectors, versioning)
-- state management boundaries (domain modules vs shared global state)
-- performance constraints (SSR/ISR/CSR choices, caching boundaries)
-- observability requirements (client-side logging, tracing correlation)
-
-ADRs are especially useful for frontend decisions because:
-- teams turn over frequently
-- tooling changes rapidly
-- “why we chose this” becomes more important than “what we chose”
-
----
+<FrontendSection
+  lead="In frontend-heavy systems, architectural decisions frequently show up as:"
+  bullets="[{&quot;icon&quot;: &quot;BracketsCurly&quot;, &quot;text&quot;: &quot;API consumption patterns (BFF, gateway, orchestration location)&quot;}, {&quot;icon&quot;: &quot;BracketsCurly&quot;, &quot;text&quot;: &quot;contract strategy (GraphQL vs REST, field selectors, versioning)&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;state management boundaries (domain modules vs shared global state)&quot;}, {&quot;icon&quot;: &quot;Gauge&quot;, &quot;text&quot;: &quot;performance constraints (SSR/ISR/CSR choices, caching boundaries)&quot;}, {&quot;icon&quot;: &quot;ChartLine&quot;, &quot;text&quot;: &quot;observability requirements (client-side logging, tracing correlation)&quot;}, {&quot;icon&quot;: &quot;Flask&quot;, &quot;text&quot;: &quot;ADRs are especially useful for frontend decisions because:&quot;}, {&quot;icon&quot;: &quot;UsersThree&quot;, &quot;text&quot;: &quot;teams turn over frequently&quot;}, {&quot;icon&quot;: &quot;BracketsCurly&quot;, &quot;text&quot;: &quot;tooling changes rapidly&quot;}, {&quot;icon&quot;: &quot;Stack&quot;, &quot;text&quot;: &quot;“why we chose this” becomes more important than “what we chose”&quot;}]"
+></FrontendSection>
 
 ## Closing Perspective
 Architecture decisions are not a single action; they are a lifecycle:
